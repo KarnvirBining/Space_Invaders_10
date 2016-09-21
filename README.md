@@ -1,15 +1,13 @@
-Team Name: Ben Ten
+# Project Name
 
-Team Members: Rehan Theiveehathasan, Puru Jetly, Karnvir Bining 
+Team Name: ?
 
-This project is a re-implementation of Space Invaders. 
+Team Members: ?, ?, ?
 
-The folders and files of this project are as follows:
 
-Doc - documentation for the project code - implementation  
+This project is a reimplementation of ...
 
-ProjectSchedule - scheduled events of the project
+The folders and files for this project are as follows:
 
-ReferenceMaterial - all referenced material and code  
-
-src - source code
+Doc - Documentation for the project
+Code - Implementation
