@@ -13,3 +13,6 @@ ProjectSchedule - scheduled events of the project
 ReferenceMaterial - all referenced material and code  
 
 src - source code
+
+Original Project: marcliberatore/spaceinvaders-101-java on GitHub
+https://github.com/marcliberatore/spaceinvaders-101-java
