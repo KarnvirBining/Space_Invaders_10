@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-
-public class GameObject {
-
-}
-=======
-package com.game;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -66,4 +59,3 @@ public abstract class GameObject {
 	}
 	
 }
->>>>>>> 7e7f412c5dca0956aa5efadbe11c8a07cd87c550
