@@ -16,11 +16,13 @@ public class Game extends Canvas implements Runnable  {
 	private Handler handler;
 	
 	public Game(){
+		handler = new Handler();
+		this.addKeyListener(new KeyInput(handler));
 		new Window(WIDTH,HEIGHT,"Pong Invaders",this);
 		
-		handler = new Handler();
 		
-		handler.addObject(new Player(100,100,ID.Player));
+		
+		handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player));
 		handler.addObject(new Alien(100,100,ID.Alien));
 		
 	}
