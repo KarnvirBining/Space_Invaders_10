@@ -9,12 +9,19 @@ public class Alien extends GameObject {
 		super(x, y, id);
 		velX = 5;
 	}
+	
 
 	public void tick() {
 			x += velX;
 			y += velY;
 			
 			if(x <= 0 || x >= Game.WIDTH-16) velX *= -1;
+			if(x <= 0 || x >= Game.WIDTH-16) y -= -39;
+			//////////////////////////////////////////////////////////// Game State Change
+			if(y >= Game.HEIGHT-150){
+				velX = 0;
+				x = 0+32;
+			}
 	}
 
 	public void render(Graphics g) {
