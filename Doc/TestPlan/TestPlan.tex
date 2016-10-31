@@ -51,7 +51,8 @@ Oct 31, 2016 & 1.0 &  Initial Draft\\
 
 \subsection{Purpose}
 The purpose of testing Pong Invaders is, at its core, to ensure that
-the game meets all its requirements whether technical, functional, or usablilityrelated.
+the game meets all its requirements whether technical, functional, or
+usablilityrelated.
 
 
 \subsection{Scope}
@@ -74,7 +75,8 @@ unit testing.
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-A.I & Artificial Intelligence, is the programmed behaviour of non-player controlled entities in the game.\\
+A.I & Artificial Intelligence, is the programmed behaviour of non-player
+controlled entities in the game.\\
 Abbreviation2 & Definition2\\
 \bottomrule
 \end{tabularx}
@@ -105,32 +107,39 @@ Pong Invaders, as well as the test cases that will be examined.
 	
 \subsection{Software Description}
 Pong Invaders is written in Java, and is a game that takes mouse or keyboard as
-inputs. For output the game displays the game state and graphics to the display.
-The keyboard input will be used to move the ship in the game, navigate through
+inputs. For output the game displays the game state and graphics to the
+display.The keyboard input will be used to move the ship in the game, navigate
+through
 menus, and fire bullets. The mouse input will be used as well if the player so
-desires, as the controls in game can be rebounded to the mouse. The functions of
-the software that are to be tested are the: window, collision, keyinput, menu,
-player, bullet and alien functions. The window function handles the window
-creation when the game is started, collision handles all detection of sprites
-with one another, keyinput handles whether a key has been pressed and what to do
-when that key is pressed, menu handles the main menu game state, player handles
-the ship functionality and how it moves, bullet handles how the ship fires
-bullets and how they are drawn, and lastly the alien function handles how the
+desires, as the controls in game can be rebounded to the mouse. The functions
+ofthe software that are to be tested are the: window, collision, keyinput,
+menu,player, bullet and alien functions. The window function handles the window
+creation when the game is started. Collision handles all detection of sprites
+with one another. Keyinput handles whether a key has been pressed and what to
+do when that key is pressed. Menu handles the main menu game state. Player
+handles the ship functionality and how it moves. Bullet handles how the ship
+fires
+bullets and how they are drawn. Lastly the alien function handles how the
 aliens are drawn on the screen and their A.I.
 
 \subsection{Test Team}
+The test team for Pong Invaders will consist of the initial developers: Puru
+Jetly, Rehan Theiveehathasan, and Karnvir Bining.
 
 
 \subsection{Automated Testing Approach}
+The automated testing approach that our team is adopting is JUnit. We will be
+using JUnit due to how widely used of a framework it is, as well as how easy it
+is to learn, and implement. We plan on using JUnit to automate testing for
+collision, alien, and keyinput to see if those functions output the correct
+type and expected values to other functions.
 
 
 \subsection{Testing Tools}
-
+For testing tools we will be using JUnit
 
 \subsection{Testing Schedule}
-
-	
-See Gantt Chart at the following url ...
+Testing will be done one week prior to Rev0 being completed.
 
 \section{System Test Description}
 	
@@ -155,8 +164,8 @@ Output: Real-Time Mouse Coordinates
 How test will be performed: With the game in an active running state, the
 program will be set to print the mouse coordinates whenever the mouse is moved.
 The mouse will be moved to the boundaries of the screen and it will be checked
-that the coordinates are equal to the screen length and width of the screen when
-respectively checked.
+that the coordinates are equal to the screen length and width of the screen
+whenrespectively checked.
 					
 \item{test-id2\\}
 
@@ -169,8 +178,9 @@ Input: Keyboard inputs
 Output: Playable character Movement
 					
 How test will be performed: The game will be put in an active state and it will
-be checked that all pre-set keys are functioning and the correct output is given
-in game. For example if the left and right arrow keys are the key bindings for
+be checked that all pre-set keys are functioning and the correct output is
+givenin game. For example if the left and right arrow keys are the key bindings
+for
 ship movement then the ship should move on screen when keyboard input is given.
 
 
@@ -186,11 +196,17 @@ Output: Correct Menu option is followed
 					
 <<<<<<< HEAD
 How test will be performed: The game will be put in an active state and it will
-be checked that all pre-set keys are functioning and the correct output is given
-in game. For example if the left and right arrow keys are the key bindings for
+be checked that all pre-set keys are functioning and the correct output is
+givenin game. For example if the left and right arrow keys are the key bindings
+for
 ship movement then the ship should move on screen when keyboard input is given.
 =======
-How test will be performed: The game will be put in an active menu state and the menu screeen will be used to traverse different menu options. The Play now option will be checked to start the game. Followed by the how to play option which should display a how to play guide. Finally a re-binding option should be given so that the player can re-bind input keys for personal preference during play. 
+How test will be performed: The game will be put in an active menu state and
+themenu screeen will be used to traverse different menu options. The Play now
+option will be checked to start the game. Followed by the how to play option
+which should display a how to play guide. Finally a re-binding option should be
+given so that the player can re-bind input keys for personal preference during
+play.
 
 
 \item{test-id4\\}
@@ -203,7 +219,9 @@ Input: Keyboard inputs
 
 Output: Playable character Movement
 
-How test will be performed: The game will be put in an active state and the user will re-bind their keys to a more personal fit. The keys will then be checked to function correctly based on binding. 
+How test will be performed: The game will be put in an active state and the
+userwill re-bind their keys to a more personal fit. The keys will then be
+checked tofunction correctly based on binding.
 >>>>>>> 415066fe97a9219050fde6466a7ec22577fc4bf8
 
 \end{enumerate}
