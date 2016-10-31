@@ -51,8 +51,7 @@ Oct 31, 2016 & 1.0 &  Initial Draft\\
 
 \subsection{Purpose}
 The purpose of testing Pong Invaders is, at its core, to ensure that
-the game meets all its requirements whether technical, functional, or usablility
-related.
+the game meets all its requirements whether technical, functional, or usablilityrelated.
 
 
 \subsection{Scope}
@@ -75,7 +74,7 @@ unit testing.
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-Abbreviation1 & Definition1\\
+A.I & Artificial Intelligence, is the programmed behaviour of non-player controlled entities in the game.\\
 Abbreviation2 & Definition2\\
 \bottomrule
 \end{tabularx}
@@ -105,7 +104,19 @@ Pong Invaders, as well as the test cases that will be examined.
 \section{Plan}
 	
 \subsection{Software Description}
-Pong Invaders is written in Java, and is a game that takes mouse or keyboard as inputs. For output the game displays the game state and graphics to the display.
+Pong Invaders is written in Java, and is a game that takes mouse or keyboard as
+inputs. For output the game displays the game state and graphics to the display.
+The keyboard input will be used to move the ship in the game, navigate through
+menus, and fire bullets. The mouse input will be used as well if the player so
+desires, as the controls in game can be rebounded to the mouse. The functions of
+the software that are to be tested are the: window, collision, keyinput, menu,
+player, bullet and alien functions. The window function handles the window
+creation when the game is started, collision handles all detection of sprites
+with one another, keyinput handles whether a key has been pressed and what to do
+when that key is pressed, menu handles the main menu game state, player handles
+the ship functionality and how it moves, bullet handles how the ship fires
+bullets and how they are drawn, and lastly the alien function handles how the
+aliens are drawn on the screen and their A.I.
 
 \subsection{Test Team}
 
@@ -141,7 +152,11 @@ Input: Mouse Movement
 					
 Output: Real-Time Mouse Coordinates 
 					
-How test will be performed: With the game in an active running state, the program will be set to print the mouse coordinates whenever the mouse is moved. The mouse will be moved to the boundaries of the screen and it will be checked that the coordinates are equal to the screen length and width of the screen when respectively checked.  
+How test will be performed: With the game in an active running state, the
+program will be set to print the mouse coordinates whenever the mouse is moved.
+The mouse will be moved to the boundaries of the screen and it will be checked
+that the coordinates are equal to the screen length and width of the screen when
+respectively checked.
 					
 \item{test-id2\\}
 
@@ -153,7 +168,10 @@ Input: Keyboard inputs
 					
 Output: Playable character Movement
 					
-How test will be performed: The game will be put in an active state and it will be checked that all pre-set keys are functioning and the correct output is given in game. For example if the left and right arrow keys are the key bindings for ship movement then the ship should move on screen when keyboard input is given. 
+How test will be performed: The game will be put in an active state and it will
+be checked that all pre-set keys are functioning and the correct output is given
+in game. For example if the left and right arrow keys are the key bindings for
+ship movement then the ship should move on screen when keyboard input is given.
 
 
 \item{test-id3\\}
@@ -166,7 +184,10 @@ Input: Keyboard inputs
 					
 Output: Playable character Movement
 					
-How test will be performed: The game will be put in an active state and it will be checked that all pre-set keys are functioning and the correct output is given in game. For example if the left and right arrow keys are the key bindings for ship movement then the ship should move on screen when keyboard input is given. 
+How test will be performed: The game will be put in an active state and it will
+be checked that all pre-set keys are functioning and the correct output is given
+in game. For example if the left and right arrow keys are the key bindings for
+ship movement then the ship should move on screen when keyboard input is given.
 
 \end{enumerate}
 
