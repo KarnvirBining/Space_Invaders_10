@@ -162,7 +162,7 @@ Testing will be done one week prior to Rev0 being completed.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Mouse Coordinate Test\\}
 
 Type: Manual 
 					
@@ -178,7 +178,7 @@ The mouse will be moved to the boundaries of the screen and it will be checked
 that the coordinates are equal to the screen length and width of the screen
 whenrespectively checked.
 					
-\item{test-id2\\}
+\item{Input Key Test\\}
 
 Type: Manual 
 					
@@ -195,7 +195,7 @@ for
 ship movement then the ship should move on screen when keyboard input is given.
 
 
-\item{test-id3\\}
+\item{Menu Test\\}
 
 Type: Manual
 					
@@ -213,7 +213,7 @@ given so that the player can re-bind input keys for personal preference during
 play.
 
 
-\item{test-id4\\}
+\item{Key-binding Test\\}
 
 Type: Manual
 
@@ -235,7 +235,7 @@ checked tofunction correctly based on binding.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Method Check\\}
 
 Type: Functional
 
@@ -247,7 +247,7 @@ Output: Relevant return values for tested methods
 
 How test will be performed: The game will be left in an inactive state. Several J-unit tests will be set up to give major methods values and check for the correct return values.
 
-\item{test-id2\\}
+\item{Collision Tests\\}
 
 Type: Dynamic
 
@@ -259,7 +259,7 @@ Output: Collision identification dialogue box or print statement
 
 How test will be performed: The game will be in an active state and the player wil be set tol simply shoot bullets and stay in a static position. The program will be set to print each time a successful collision is made. After 3 successful bullet collisions, the program will stop bullet shots and wait for the enemies to hit the playable ship to check for final collision. 
 
-\item{test-id3\\}
+\item{Exit Game Test\\}
 
 Type: Manual
 
@@ -271,7 +271,7 @@ Output: Game exits
 
 How test will be performed: After entering a running game, the user will exit using the associated key binding or by exiting the window entirely. In the first case, the user should return to the title screen with saved settings intact. In the second case, the user should be able to turn the game back on with saved settings intact. 
 
-\item{test-id4\\}
+\item{Game Over Test\\}
 
 Type: Static
 
@@ -283,7 +283,7 @@ Output: Game Over Screen
 
 How test will be performed: Game start will be initiated and aliens will simply run down the screen until user character is hit. The collision should be followed shortly by a game over screen. 
 
-\item{test-id5\\}
+\item{Invalid Key Test\\}
 
 Type: manual
 
@@ -295,7 +295,7 @@ Output: Error messages
 
 How test will be performed: Invalid keyboard inputs, unbound keys, will be input while game is in progress. If an invalid key is pressed twice or more a small dialogue box will appear remind the user that the key is unbound. 
 
-\item{test-id6\\}
+\item{Sprite Test\\}
 
 Type: Functional 
 
@@ -317,7 +317,7 @@ How test will be performed: The program will be set to display each sprite when 
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Re-size Test\\}
 
 Type: Manual
 					
@@ -329,7 +329,7 @@ Output/Result: Screen size change
 					
 How test will be performed: The mouse will be used to make the screen bigger, this should happen while keeping the resolution of all objects the same. 
 					
-\item{test-id2\\}
+\item{Input Test\\}
 
 Type: Manual
 					
@@ -349,7 +349,7 @@ How test will be performed: multiple user inputs will be given, the system will 
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Legal Test\\}
 
 Type: Manual
 					
@@ -361,7 +361,7 @@ Output: none
 					
 How test will be performed: Game will be checked for any legal issues, no offensive language or icons 
 
-\item{test-id2\\}
+\item{Development Test\\}
 
 Type: Manual
 					
@@ -381,42 +381,103 @@ How test will be performed: The game jar will simply be downloaded on a none mas
 
 \subsection{Area of Testing1}
 		
-\paragraph{Title for Test}
+\paragraph{Space Invaders Testing}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Movement of ship\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
-					
-\item{test-id2\\}
+Type: Functional
 
-Type: Functional, Dynamic, Manual, Static etc.
+Initial State: Application is running
+
+Input/Condition: Keyboard buttons ‘a’ and ‘d'
+
+Output/Result: Ship moves
+
+How test will be performed: Test will be done manually by developers running prototype. 
+
 					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+\item{Hitbox of alien\\}
+
+Type: Functional
+
+Initial State: Application is running
+
+Input/Condition: Keyboard ‘spacebar’
+
+Output/Result: Ship shoots an alien. Alien dies.
+
+How test will be performed: Test will be done manually by developers running prototype. Alien will be lined up with ship. Ship will then shoot a bullet towards to alien to check for correctness of hitboxes on alien.
+
+
+
+\item{Hitbox of ship and end game screen\\}
+
+Type: Functional
+
+Initial State: Application is running
+
+Input/Condition: Alien is on course to hit ship.
+
+Output/Result: Ship takes damage. Player loses game
+
+How test will be performed: Test will be done manually by developers running prototype. Ship will not move when game starts and Alien will hit the ship. Test done to see if end game screen can be reached by destroying the ship. 
 
 \end{enumerate}
 
 \subsection{Area of Testing2}
 
-...
+\paragraph{Pong Testing}
 
+\begin{enumerate}
+
+\item{Hitbox of paddle\\}
+
+Type: Functional
+
+Initial State: Application is running
+
+Input/Condition: Pong paddle moves with ‘w’ and ‘s’ and can hit pong ball
+
+Output/Result: Pong paddle moves up and down on left side of screen and hits ball back
+
+How test will be performed: Test will be done manually by developers running prototype. Ball is set on course to hit paddle to check if physics on paddle are working.
+
+
+\item{Hitbox of the alien\\}
+
+Type: Functional
+
+Initial State: Application is running
+
+Input/Condition: Pong paddle hits pong ball towards an alien.
+
+Output/Result: Alien blows up.
+
+How test will be performed: Test will be done manually by developers running prototype. Ball is set on course to hit paddle then it rebounds to an alien. This test done to check if hit boxes on alien interact with pong ball.
+
+
+\item{Point Scoring\\}
+
+Type: Structural
+
+Initial State: Application is running
+
+Input/Condition: User controlled Pong paddle misses ball. 
+
+Output/Result: Points taken off from user’s overall score.
+
+How test will be performed: Test will be done manually by developers running prototype. Test is done to see if scoring of points is done correctly.
+
+\end{enumerate}
 	
 \section{Comparison to Existing Implementation}	
+The implementation of our game is somewhat different than the original. However, all requirements of the original have stayed the same in this implementation. 
+One difference from the existing implementation is that there is a Pong overlay. Now the user must destroy the aliens coming for the ship while also playing a 
+game of Pong at the same time. The Pong ball can interact with the aliens, which means that the ball can destroy aliens while also bouncing back to the original 
+spot it came from. Another difference from the existing implementation is that the resolution of the game has increased from 800x400 to 1280x720. 
+This way graphics can be presented in higher definition. Also the smoothness of the game has been increased by increasing the frames per second from 30 to 60.
 				
 \section{Unit Testing Plan}
 		
