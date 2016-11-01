@@ -194,13 +194,6 @@ Input: Keyboard and mouse inputs
 					
 Output: Correct Menu option is followed 
 					
-<<<<<<< HEAD
-How test will be performed: The game will be put in an active state and it will
-be checked that all pre-set keys are functioning and the correct output is
-givenin game. For example if the left and right arrow keys are the key bindings
-for
-ship movement then the ship should move on screen when keyboard input is given.
-=======
 How test will be performed: The game will be put in an active menu state and
 themenu screeen will be used to traverse different menu options. The Play now
 option will be checked to start the game. Followed by the how to play option
@@ -222,7 +215,6 @@ Output: Playable character Movement
 How test will be performed: The game will be put in an active state and the
 userwill re-bind their keys to a more personal fit. The keys will then be
 checked tofunction correctly based on binding.
->>>>>>> 415066fe97a9219050fde6466a7ec22577fc4bf8
 
 \end{enumerate}
 
@@ -234,45 +226,145 @@ checked tofunction correctly based on binding.
 
 \item{test-id1\\}
 
+Type: Functional
+
+Initial State: In-Active Game State 
+
+Input: J-Unit test cases
+
+Output: Relevant return values for tested methods 
+
+How test will be performed: The game will be left in an inactive state. Several J-unit tests will be set up to give major methods values and check for the correct return values.
+
+\item{test-id2\\}
+
+Type: Dynamic
+
+Initial State: Active Game State 
+
+Input: none
+
+Output: Collision identification dialogue box or print statement 
+
+How test will be performed: The game will be in an active state and the player wil be set tol simply shoot bullets and stay in a static position. The program will be set to print each time a successful collision is made. After 3 successful bullet collisions, the program will stop bullet shots and wait for the enemies to hit the playable ship to check for final collision. 
+
+\item{test-id3\\}
+
+Type: Manual
+
+Initial State: Active Game State 
+
+Input: Keyboard and mouse input
+
+Output: Game exits 
+
+How test will be performed: After entering a running game, the user will exit using the associated key binding or by exiting the window entirely. In the first case, the user should return to the title screen with saved settings intact. In the second case, the user should be able to turn the game back on with saved settings intact. 
+
+\item{test-id4\\}
+
+Type: Static
+
+Initial State: Active Game State 
+
+Input: none
+
+Output: Game Over Screen 
+
+How test will be performed: Game start will be initiated and aliens will simply run down the screen until user character is hit. The collision should be followed shortly by a game over screen. 
+
+\item{test-id5\\}
+
+Type: manual
+
+Initial State: Active Game State 
+
+Input: Keyboard input
+
+Output: Error messages
+
+How test will be performed: Invalid keyboard inputs, unbound keys, will be input while game is in progress. If an invalid key is pressed twice or more a small dialogue box will appear remind the user that the key is unbound. 
+
+\item{test-id6\\}
+
+Type: Functional 
+
+Initial State: Inactive Game State
+
+Input: none
+
+Output: Correct object sprite
+
+How test will be performed: The program will be set to display each sprite when called from a j-unit test. Each sprite should match the true case in the j-unit test. 
+
 \end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
 
 \subsubsection{Area of Testing1}
 		
-\paragraph{Title for Test}
+\paragraph{Stylistic tests}
 
 \begin{enumerate}
 
 \item{test-id1\\}
 
-Type: 
+Type: Manual
 					
-Initial State: 
+Initial State: Active Game State
+		
+Input/Condition: Mouse input screen resizing
 					
-Input/Condition: 
+Output/Result: Screen size change
 					
-Output/Result: 
-					
-How test will be performed: 
+How test will be performed: The mouse will be used to make the screen bigger, this should happen while keeping the resolution of all objects the same. 
 					
 \item{test-id2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Manual
 					
-Initial State: 
+Initial State: Active Game State
 					
-Input: 
+Input: Mouse Movements and keyboard input
 					
-Output: 
+Output: real-time input tracking 
 					
-How test will be performed: 
+How test will be performed: multiple user inputs will be given, the system will have to print back all given inputs in real-time. 
 
 \end{enumerate}
 
 \subsubsection{Area of Testing2}
 
-...
+\paragraph{Maintainability and support tests}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+Type: Manual
+					
+Initial State: Active Game State
+					
+Input: Mouse Movements and keyboard input
+					
+Output: none
+					
+How test will be performed: Game will be checked for any legal issues, no offensive language or icons 
+
+\item{test-id2\\}
+
+Type: Manual
+					
+Initial State: Inactive game state
+					
+Input: none
+					
+Output: none
+					
+How test will be performed: The game jar will simply be downloaded on a none master branch computer and checked to see if local development is possible. To allow for user development and personal use. 
+
+
+\end{enumerate}
+
 
 \section{Tests for Proof of Concept}
 
