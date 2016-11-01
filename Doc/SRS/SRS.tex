@@ -39,32 +39,50 @@ October 11, 2016  & Rehan Theiveehathasan & Initial Draft\\
 \pagenumbering{arabic}
 \section{Project Drivers}
 \subsection{The Purpose of the Project}
-The purpose of Pong Invaders is, at its core, to help cure the boredom of its users. Pong Invaders looks to bring back the best of the pioneer gaming generation with a new twist to bring these classical favourites back up to speed with today’s games. This game will allow anyone with a computer to either relive two of their favourite games or for a new generation to be exposed to the origins of gaming. With the completion of Pong Invaders anyone with a computer will be able to get their hands on the remodelled duo of Space Invaders and Pong.     
+The purpose of Pong Invaders is, at its core, to help cure the boredom of its
+users. Pong Invaders looks to bring back the best of the pioneer gaming
+generation with a new twist to bring these classical favourites back up to
+speedwith today’s games. This game will allow anyone with a computer to either
+relivetwo of their favourite games or for a new generation to be exposed to the
+origins of gaming. With the completion of Pong Invaders anyone with a computer
+will be able to get their hands on the remodelled duo of Space Invaders and
+Pong.
 \subsection{The Stakeholders}
 \subsubsection{The Client}
-The client for our project is Professor Spencer Smith, 3XA3 Instructor of McMaster University. 
+The client for our project is Professor Spencer Smith, 3XA3 Instructor of
+McMaster University.
 \subsubsection{The Customers}
-The primary customer will be the general public interested in playing Pong Invaders. Any individual with internet access able to download the game would constitute as a viable customer for Pong Invaders. 
+The primary customer will be the general public interested in playing Pong
+Invaders. Any individual with internet access able to download the game would
+constitute as a viable customer for Pong Invaders.
 \subsubsection{Other Stakeholders}
 General Public
-The general public will constitute our consumer base as a whole will makeup the remaining stakeholders. These stakeholders need not be involved in the re-development process since it is a remodelling of two previously made games with already given specifications and requirements. This allows for the general public to be focussed towards creating a player base for Pong Invaders. 
+The general public will constitute our consumer base as a whole will makeup the
+remaining stakeholders. These stakeholders need not be involved in the
+re-development process since it is a remodelling of two previously made games
+with already given specifications and requirements. This allows for the general
+public to be focussed towards creating a player base for Pong Invaders.
 \subsection{Mandated Constraints}
-Description: Pong Invaders will be available for anyone able to download the jar file and a computer to run it on.
+Description: Pong Invaders will be available for anyone able to download the
+jarfile and a computer to run it on.
  
-Rationale: The jar file download will allow users to run the game on any computer platform with internet access.
+Rationale: The jar file download will allow users to run the game on any
+computer platform with internet access.
  
-Fit Criterion: Pong Invaders will be available to users that can run and download the jar file.
+Fit Criterion: Pong Invaders will be available to users that can run and
+download the jar file.
  
 
 Description: The Game window will be set to a static 640x480.
  
-Rationale: keeping the game on static window dimensions will allow for less problems when adding the pong overlay.
+Rationale: keeping the game on static window dimensions will allow for less
+problems when adding the pong overlay.
  
-Fit Criterion: The window size will be kept static to ensure game functionality.
+Fit Criterion: The window size will be kept static to ensure game
+functionality.\subsection{Naming Conventions and Terminology}
 
-\subsection{Naming Conventions and Terminology}
-
-Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project
+Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in
+the Project
 
 % this doesn't get rendered correctly. Fix it.
 Acronym/ Abbreviation
@@ -103,18 +121,24 @@ Repository
 Relevant Facts
 
 
-The facts that are relevant to this project are that there are over 950 lines of code currently present in the original Repo of this game. This game need % should be "needs"
+The facts that are relevant to this project are that there are over 950 lines
+ofcode currently present in the original Repo of this game. This game need %
+should be "needs"
 to be run on Java Development Kit 1.8 or higher.
 
 Assumptions
 
-The assumptions that are made for this project  is that all the text and photo editing software will be free and accessible for all developers. The written code will be encapsulated so it won’t % this ' doesn't get rendered. fix it.
- be sold and only used for educational purposes. The users will have access to a computer with internet access. 
+The assumptions that are made for this project is that all the text and photo
+editing software will be free and accessible for all developers. The written
+code will be encapsulated so it won’t % this ' doesn't get rendered. fix it.
+be sold and only used for educational purposes. The users will have access to a
+computer with internet access.
 
 \section{Functional Requirements}
 \subsection{The Scope of the Work and the Product}
 \subsubsection{The Context of the Work}
-The project will focus on interactions between developers and the software and interactions between the software and the user.
+The project will focus on interactions between developers and the software and
+interactions between the software and the user.
 
 \subsubsection{Work Partitioning}
 
@@ -153,7 +177,8 @@ Pong Invaders Executable JAR. (Requires Java)
 Use Case Name
 Execute File
 Use Case Description
-Starts the game for the user. Upon startup the game sends the user to the Start Menu case.
+Starts the game for the user. Upon startup the game sends the user to the Start
+Menu case.
 Primary Actor
 User 
 Precondition
@@ -161,9 +186,11 @@ Must have a recent version of java to run the JAR
 Trigger
 Execute JAR file by command line or by double clicking the JAR file.
 Basic Flow
-JAR file will run, and a game window is generated on the user’s display. Sends user to use case 2 on success.
+JAR file will run, and a game window is generated on the user’s display. Sends
+user to use case 2 on success.
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 Use Case Element
 Description
@@ -174,17 +201,24 @@ Pong Invaders Executable JAR. (Requires Java)
 Use Case Name
 Start Menu
 Use Case Description
-Allows user to select options: Play Now, How to Play, Controls, and Quit Game. On this case the background also shows the title screen saying Pong Invaders. The start menu also shows the current scoreboard of users who have played recently on the current machine.
+Allows user to select options: Play Now, How to Play, Controls, and Quit Game.
+On this case the background also shows the title screen saying Pong Invaders.
+The start menu also shows the current scoreboard of users who have played
+recently on the current machine.
 Primary Actor
 User 
 Precondition
 Must have successfully ran the JAR file. Requires use case 1.
 Trigger
-Source code automatically sends user to this game state once Pong Invaders’ JAR file runs.
+Source code automatically sends user to this game state once Pong Invaders’ JAR
+file runs.
 Basic Flow
-Start menu is initialized. User now has options of: Play Now, How to Play, Controls, Quit Game. Where each option respectively takes the user to case 3, 4, 5, 8.
+Start menu is initialized. User now has options of: Play Now, How to Play,
+Controls, Quit Game. Where each option respectively takes the user to case 3,
+4,5, 8.
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 
 Use Case Element
@@ -200,13 +234,15 @@ Sub option of Start Menu case. Allows the user to play the game.
 Primary Actor
 User 
 Precondition
-Must have successfully ran the JAR file. Requires use case 2 to reach this case.
-Trigger
+Must have successfully ran the JAR file. Requires use case 2 to reach this
+case.Trigger
 Selecting start menu option of play now will send the user to this state.
 Basic Flow
-If user selects Play Now, the game state sends the user to the Game Active case, which is use case 6.
+If user selects Play Now, the game state sends the user to the Game Active
+case,which is use case 6.
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 
 Use Case Element
@@ -222,13 +258,16 @@ Sub option of Start Menu case. Teaches user how to play the game.
 Primary Actor
 User 
 Precondition
-Must have successfully ran the JAR file. Requires use case 2 to reach this case.
-Trigger
+Must have successfully ran the JAR file. Requires use case 2 to reach this
+case.Trigger
 Selecting Start Menu option of How to Play, will send the user to this state.
 Basic Flow
-If user selects How to Play, the game state prints to display how to play based on the current control configurations in Controls. User can from here exit to Start Menu (case 2) on user input.
+If user selects How to Play, the game state prints to display how to play based
+on the current control configurations in Controls. User can from here exit to
+Start Menu (case 2) on user input.
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 
 Use Case Element
@@ -240,17 +279,21 @@ Pong Invaders Executable JAR. (Requires Java)
 Use Case Name
 Controls
 Use Case Description
-Sub option of Start Menu case. Allows user to edit the current configuration of controls that the game uses.
+Sub option of Start Menu case. Allows user to edit the current configuration of
+controls that the game uses.
 Primary Actor
 User 
 Precondition
-Must have successfully ran the JAR file. Requires use case 2 to reach this case.
-Trigger
+Must have successfully ran the JAR file. Requires use case 2 to reach this
+case.Trigger
 Selecting Start Menu option of Controls, will send the user to this case.
 Basic Flow
-If user selects Controls, the game state displays all current controls. The user can select and edit any controls they desire. User from here exits to Start Menu (case 2) on user input.
+If user selects Controls, the game state displays all current controls. The
+usercan select and edit any controls they desire. User from here exits to Start
+Menu(case 2) on user input.
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 
 Use Case Element
@@ -262,17 +305,22 @@ Pong Invaders Executable JAR. (Requires Java)
 Use Case Name
 Game Active
 Use Case Description
-The active state of the game upon selecting the Play Now case. Here the user can fully play the game.
+The active state of the game upon selecting the Play Now case. Here the user
+canfully play the game.
 Primary Actor
 User 
 Precondition
-Must have successfully ran the JAR file. Requires use case 2 to reach the Play Now case. If the Play Now case is successful the user is sent to this case.
+Must have successfully ran the JAR file. Requires use case 2 to reach the Play
+Now case. If the Play Now case is successful the user is sent to this case.
 Trigger
 Selecting Start Menu option of Play Now, will send the user to this game state.
 Basic Flow
-If user selects Play Now, the game state sends the user to Game Active. From here user can either exit to Start Menu (case 2) by user input, or upon losing be taken to the Game Over screen (case 7).
+If user selects Play Now, the game state sends the user to Game Active. From
+here user can either exit to Start Menu (case 2) by user input, or upon losing
+be taken to the Game Over screen (case 7).
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 
 
@@ -285,17 +333,23 @@ Pong Invaders Executable JAR. (Requires Java)
 Use Case Name
 Game Over
 Use Case Description
-A Game Over screen that displays the current sessions high scoreboard, and where the user ranks currently. Upon any user input the Game Over screen takes the user to the Start Menu (case 2) title screen.
+A Game Over screen that displays the current sessions high scoreboard, and
+wherethe user ranks currently. Upon any user input the Game Over screen takes
+the
+user to the Start Menu (case 2) title screen.
 Primary Actor
 User 
 Precondition
-Must have successfully ran the JAR file. Requires user to lose in Game Active (case 6) to reach this case.
+Must have successfully ran the JAR file. Requires user to lose in Game Active
+(case 6) to reach this case.
 Trigger
 Upon losing in Game Active (case 6).
 Basic Flow
-Upon losing in Game Active (case 6) the user views an updated scoreboard with their score and is then sent to the Start Menu (case 2).
+Upon losing in Game Active (case 6) the user views an updated scoreboard with
+their score and is then sent to the Start Menu (case 2).
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 
 Use Case Element
@@ -311,86 +365,128 @@ Exits the JAR application window.
 Primary Actor
 User 
 Precondition
-Must have successfully ran the JAR file. Requires user select the Quit Game option in the Start Menu (case 2).
+Must have successfully ran the JAR file. Requires user select the Quit Game
+option in the Start Menu (case 2).
 Trigger
 Upon selecting Quit Game, or closing the window.
 Basic Flow
-In Start Menu (case 2) if selected the window closes. Or when the user closes the window/terminates the process.
+In Start Menu (case 2) if selected the window closes. Or when the user closes
+the window/terminates the process.
 Alternate Flows
-JAR file fails. User is told to check their java version, and installation via reading an instruction manual.
+JAR file fails. User is told to check their java version, and installation via
+reading an instruction manual.
 
 \subsection{Functional Requirements}
 Aim With Pointing Device
-The user must be able to utilize and aim with their pointing device. The program will correctly obtain mouse coordinates from the display window.
+The user must be able to utilize and aim with their pointing device. The
+programwill correctly obtain mouse coordinates from the display window.
 
-FIT CRITERION OR TEST CASE: test if the mouse coordinates are the correct coordinates by displaying them to terminal as a test. Check if user is able to aim with the mouse.
+FIT CRITERION OR TEST CASE: test if the mouse coordinates are the correct
+coordinates by displaying them to terminal as a test. Check if user is able to
+aim with the mouse.
 
 
 Move With Keyboard
-The user must be able to utilize the keyboard to control, and move the ship while in game. The user must be able to select menu options with the keyboard.
-FIT CRITERION OR TEST CASE: can the user select menu options? Can the user move in the game with the keyboard?
+The user must be able to utilize the keyboard to control, and move the ship
+while in game. The user must be able to select menu options with the keyboard.
+FIT CRITERION OR TEST CASE: can the user select menu options? Can the user move
+in the game with the keyboard?
 
 
 Output Game to Display
-The program must output correct visuals to the user’s display. The display must have correct up to date graphics depending on user inputs.
-FIT CRITERION OR TEST CASE: is there a display screen? Are user inputs being mimicked onto the display?
+The program must output correct visuals to the user’s display. The display must
+have correct up to date graphics depending on user inputs.
+FIT CRITERION OR TEST CASE: is there a display screen? Are user inputs being
+mimicked onto the display?
 
 
 Graphics Load Correctly
-The program must correctly load all relevant graphics contained in the JAR file.
-FIT CRITERION OR TEST CASE: on user input, does the correct sprite/visual load correctly?
+The program must correctly load all relevant graphics contained in the JAR
+file.FIT CRITERION OR TEST CASE: on user input, does the correct sprite/visual
+load
+correctly?
 
 
 Correct Return Values
 The program must correctly return all relevant values from called methods.
-FIT CRITERION OR TEST CASE: makefile with several test cases will run through the source code doing unit testing to see if the correct return values are made.
-
-
+FIT CRITERION OR TEST CASE: makefile with several test cases will run through
+the source code doing unit testing to see if the correct return values are made.
 Collision System
-The game must output the correct events upon unit collisions of ingame sprites and visuals.
-FIT CRITERION OR TEST CASE: does the game end when user collides with an object? Do sprites behave as they should upon collision? Are hitboxes of visuals correct?
+The game must output the correct events upon unit collisions of ingame sprites
+and visuals.
+FIT CRITERION OR TEST CASE: does the game end when user collides with an
+object?Do sprites behave as they should upon collision? Are hitboxes of visuals
+correct?
 
 
 Title Screen 
-Upon executing the game, the display must output the title screen with a list of options.
-FIT CRITERION OR TEST CASE: Does the title screen show up when the game is initialized? Is it possible to correctly select title screen menu options?
+Upon executing the game, the display must output the title screen with a list
+ofoptions.
+FIT CRITERION OR TEST CASE: Does the title screen show up when the game is
+initialized? Is it possible to correctly select title screen menu options?
 
 
 Play Now Option
-Upon entering the title screen the user must be able to select the start menu option of Play Now which correctly runs the game.
-FIT CRITERION OR TEST CASE: does the Play Now option correctly change the game state to the active game state?
+Upon entering the title screen the user must be able to select the start menu
+option of Play Now which correctly runs the game.
+FIT CRITERION OR TEST CASE: does the Play Now option correctly change the game
+state to the active game state?
 
 
 How to Play Option
-In the title screen the user must be able to select the How to Play option which outputs to terminal correctly the current control scheme of the game and how to play.
-FIT CRITERION OR TEST CASE: does the program print to terminal the correct results?
+In the title screen the user must be able to select the How to Play option
+whichoutputs to terminal correctly the current control scheme of the game and
+how to
+play.
+FIT CRITERION OR TEST CASE: does the program print to terminal the correct
+results?
 Controls Option
-The user must be able to select the Controls option from the title screen. The user must be able to select and edit controls that they want to. The edited controls must update to the new controls correctly.
-FIT CRITERION OR TEST CASE:  can the user enter the control options? Does the program allow for controls to be edited? Does the program update and save the control scheme correctly?
+The user must be able to select the Controls option from the title screen. The
+user must be able to select and edit controls that they want to. The edited
+controls must update to the new controls correctly.
+FIT CRITERION OR TEST CASE: can the user enter the control options? Does the
+program allow for controls to be edited? Does the program update and save the
+control scheme correctly?
 
 
 Quit Game Option
-The user must be able to quit the game in the active game state, and in the title screen via user input. 
-FIT CRITERION OR TEST CASE: does the game successfully save and exit when the user prompts to exit the game? When the user closes the window / terminates the process are settings saved properly?
+The user must be able to quit the game in the active game state, and in the
+title screen via user input.
+FIT CRITERION OR TEST CASE: does the game successfully save and exit when the
+user prompts to exit the game? When the user closes the window / terminates the
+process are settings saved properly?
 
 
 Game Over Screen
-Upon user collision with an enemy in game, the program must take the user to a Game Over screen showing the current high scoreboard and where they rank amongst it if they do at all.
-FIT CRITERION OR TEST CASE: on user collision does a Game Over screen correctly display?  Does the high scoreboard display properly? Does the scoreboard update correctly with the current user score?
+Upon user collision with an enemy in game, the program must take the user to a
+Game Over screen showing the current high scoreboard and where they rank
+amongstit if they do at all.
+FIT CRITERION OR TEST CASE: on user collision does a Game Over screen correctly
+display? Does the high scoreboard display properly? Does the scoreboard update
+correctly with the current user score?
 
 
 Error Messages
-On invalid user inputs, the program must output a relevant error message to terminal correctly.
-FIT CRITERION OR TEST CASE: if user enters improper input does the terminal output the correct error message?
+On invalid user inputs, the program must output a relevant error message to
+terminal correctly.
+FIT CRITERION OR TEST CASE: if user enters improper input does the terminal
+output the correct error message?
 \section{Non-functional Requirements}
 \subsection{Look and Feel Requirements}
 Appearance Requirements
-Pong Invaders is going to stay authentic to the color pallets used by both Pong and Space Invaders. The pong paddles will be white the ball also. However the graphics for the Space Invaders component of the game, are going to be licensed by Creative Commons. The program will be displayed on desktop with the resolution of 640x480.
+Pong Invaders is going to stay authentic to the color pallets used by both Pong
+and Space Invaders. The pong paddles will be white the ball also. However the
+graphics for the Space Invaders component of the game, are going to be licensed
+by Creative Commons. The program will be displayed on desktop with the
+resolution of 640x480.
 
 
 Style Requirements
 
-The style Pong Invaders is trying to illustrate to the user is the retro-arcade style of the games from the 90’s. Also, when an invader is destroyed by the space ship or the pong ball, the explosion of the invader must be satisfying for the user. 
+The style Pong Invaders is trying to illustrate to the user is the retro-arcade
+style of the games from the 90’s. Also, when an invader is destroyed by the
+space ship or the pong ball, the explosion of the invader must be satisfying
+forthe user.
 
 
 \subsection{Usability and Humanity Requirements}
@@ -407,7 +503,8 @@ Understandability and Politeness Requirements
 The user shall be able to operate a keyboard.
 
 Accessibility Requirements 
-The game shall be able to be accessed and executed on user’s machine with Java Development Kit of 1.8 or higher. 
+The game shall be able to be accessed and executed on user’s machine with Java
+Development Kit of 1.8 or higher.
 
 \subsection{Performance Requirements}
 Speed and Latency Requirements 
@@ -420,10 +517,12 @@ Precision or Accuracy Requirements
 The game shall use floating point values. 
 
 Reliability and Availability Requirements
-The game shall be available wherever there is a desktop running Java Development Kit 1.8 or higher.
+The game shall be available wherever there is a desktop running Java
+DevelopmentKit 1.8 or higher.
 
 Robustness or Fault-Tolerance Requirements 
-The game shall be able to operate without consideration of the physical state of the end users.
+The game shall be able to operate without consideration of the physical state
+ofthe end users.
 
 Capacity Requirements 
 N/A
@@ -432,15 +531,18 @@ Scalability or Extensibility Requirements
 The code will allow for scalability.
 
 Longevity Requirements 
-The product shall be relevant for the lifetime of support of Java Development Kit 1.8.
+The product shall be relevant for the lifetime of support of Java Development
+Kit 1.8.
 
 
 \subsection{Operational and Environmental Requirements}
 Expected Physical Environment
-The product will be playable on any computer that has the jar file downloaded. It is technically playable in any environment where you can take a computer.
+The product will be playable on any computer that has the jar file downloaded.
+It is technically playable in any environment where you can take a computer.
  
 Expected Technological Environment
-Pong Invaders will be written in java and exported as a jar file to be run on any OS (operating system). Meaning it will be runnable on any computer.
+Pong Invaders will be written in java and exported as a jar file to be run on
+any OS (operating system). Meaning it will be runnable on any computer.
 
 Partner Applications:
 None.
@@ -448,22 +550,32 @@ None.
 
 \subsection{Maintainability and Support Requirements}
 How easy is it to maintain
-Pong Invaders is relatively easy to maintain as it requires little updates after it is initially launched and might require some accessory downloads if there is more content added. The application will be patched based on user feedback for the game after release.
+Pong Invaders is relatively easy to maintain as it requires little updates
+afterit is initially launched and might require some accessory downloads if
+there is
+more content added. The application will be patched based on user feedback for
+the game after release.
  
 Special maintenance conditions
-In a special case where there is a critical error found in the code the current jar may need to be deleted and completely re-downloaded to ensure proper execution of the game.
+In a special case where there is a critical error found in the code the current
+jar may need to be deleted and completely re-downloaded to ensure proper
+execution of the game.
  
 Portability
-The jar file will be available anywhere a user can access the internet and the game can be taken anywhere the user is willing to take their computer. 
+The jar file will be available anywhere a user can access the internet and the
+game can be taken anywhere the user is willing to take their computer.
 
 \subsection{Security Requirements}
-All individuals are authorized to use this product, and fork their own repository from this project to modify and redevelop as they see fit.
+All individuals are authorized to use this product, and fork their own
+repository from this project to modify and redevelop as they see fit.
 
 \subsection{Cultural Requirements}
-The product under no circumstances can have offensive icons or images depicted in the final release.
+The product under no circumstances can have offensive icons or images depicted
+in the final release.
 
 \subsection{Legal Requirements}
-The project is to be licensed and distributed under a Creative Commons license such as the GNU General Public License (GPL) 3.0.
+The project is to be licensed and distributed under a Creative Commons license
+such as the GNU General Public License (GPL) 3.0.
 
 \subsection{Health and Safety Requirements}
 Too much screen time without a break can be harmful to user vision. 
@@ -473,8 +585,8 @@ Too much screen time without a break can be harmful to user vision.
 Not applicable to this project.
 
 \subsection{Off-the-Shelf Solutions}
-For the product to be executed the following off-the-shelf software is required: 
--Java Development kit 1.8 or higher
+For the product to be executed the following off-the-shelf software is
+required:-Java Development kit 1.8 or higher
 
 All software can be received for free off the Internet as it is opensource.
 
@@ -483,15 +595,21 @@ None.
 
 Potential User Problems:
 
-Some user problems that can occur from the product is eye soreness/eye strain from extended playing. Users may not be able to correctly follow installation instructions due to inexperience with Java.
+Some user problems that can occur from the product is eye soreness/eye strain
+from extended playing. Users may not be able to correctly follow installation
+instructions due to inexperience with Java.
 
-Limitations in the Anticipated Implementation Environment That May Inhibit the New Product:
+Limitations in the Anticipated Implementation Environment That May Inhibit the
+New Product:
 
-Computers that are old may not be able to run the product at optimal quality. Meaning sluggish performance and drop in frames per second.
+Computers that are old may not be able to run the product at optimal quality.
+Meaning sluggish performance and drop in frames per second.
 
 Follow-Up Problems 
 
-If one of the developers are not able to hand in major deliverables on time, this can delay the release of the product for an indefinite time. If Java Development Kit 1.8 is not supported in the near future by Oracle.
+If one of the developers are not able to hand in major deliverables on time,
+this can delay the release of the product for an indefinite time. If Java
+Development Kit 1.8 is not supported in the near future by Oracle.
 
 \subsection{Tasks}
 
@@ -519,28 +637,55 @@ Yearly
 
 Planning of the Development 
 
-Phases Phase 1 Model Implementation and Revision: This phase is important as this will be the structure and backbone of the project. This is when the game will be set up  and how each module interacts with each other. This is crucial to complete before any coding is started. The product shall be based on this model. Phase 2 Programming Implementation: This phase is where construction of the product begins. Here the game will be created and tested. The program shall run on desktop. The client will check if all requirements are met for the game and decide if game will be released. Phase 3 Maintenance: At this point for optimal game experience the game shall be maintained at a high standard. This shall be completed and reviewed regularly or upon notice. The program will be continually playable throughout years to come. The program will remain functional as long as the client deems fit. 
+Phases Phase 1 Model Implementation and Revision: This phase is important as
+this will be the structure and backbone of the project. This is when the game
+will be set up and how each module interacts with each other. This is crucial
+tocomplete before any coding is started. The product shall be based on this
+model.Phase 2 Programming Implementation: This phase is where construction of
+the
+product begins. Here the game will be created and tested. The program shall run
+on desktop. The client will check if all requirements are met for the game and
+decide if game will be released. Phase 3 Maintenance: At this point for optimal
+game experience the game shall be maintained at a high standard. This shall be
+completed and reviewed regularly or upon notice. The program will be
+continuallyplayable throughout years to come. The program will remain functional
+as long asthe client deems fit.
 
 
 \subsection{Migration to the New Product}
 Not applicable to this project.
 
 \subsection{Risks}
-Risks for this project center mainly around productivity and time constraints. Since Pong Invaders will consist of a meshing of two games it requires strong time commitment and high productivity. Failure to do so may result in forced downscaling or extension of the project. 
+Risks for this project center mainly around productivity and time constraints.
+Since Pong Invaders will consist of a meshing of two games it requires strong
+time commitment and high productivity. Failure to do so may result in forced
+downscaling or extension of the project.
 
 \subsection{Costs}
-Costs for this project center mainly around utility costs to run developer machines, and labour costs. The labour costs are not monetary as this is an open sourced project where the labour costs are in time spent developing for the developers.
+Costs for this project center mainly around utility costs to run developer
+machines, and labour costs. The labour costs are not monetary as this is an
+opensourced project where the labour costs are in time spent developing for the
+developers.
 
 \subsection{User Documentation and Training}
-The user documentation is in the form of a README file in the project repository. This file details all installation requirements, and instructions pertaining to installation and running the file. The user requires no training to use this project.
+The user documentation is in the form of a README file in the project
+repository. This file details all installation requirements, and instructions
+pertaining to installation and running the file. The user requires no training
+to use this project.
 
 \subsection{Waiting Room}
-V2.0 Pong added to the base game as an additional layer to the display. Pong also functionally reacts with the Space Invaders base game.
+V2.0 Pong added to the base game as an additional layer to the display. Pong
+also functionally reacts with the Space Invaders base game.
 
-V3.0 Audio implemented to all interactions of Pong Invaders. BGM is will now be functional. Audio settings can be manipulated through the title screen in “Audio Settings.”
+V3.0 Audio implemented to all interactions of Pong Invaders. BGM is will now be
+functional. Audio settings can be manipulated through the title screen in
+“AudioSettings.”
 
 \subsection{Ideas for Solutions}
-Implement a class in Java that handles collisions with any object with a designated return type of hitbox. This way the project can scale from Space Invaders to Pong Invaders by allowing Pong to interact functionally with Space Invaders.
+Implement a class in Java that handles collisions with any object with a
+designated return type of hitbox. This way the project can scale from Space
+Invaders to Pong Invaders by allowing Pong to interact functionally with Space
+Invaders.
 
 \bibliographystyle{plainnat}
 \bibliography{SRS}
