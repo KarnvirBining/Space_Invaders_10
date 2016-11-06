@@ -123,8 +123,10 @@ display.The keyboard input will be used to move the ship in the game, navigate
 through
 menus, and fire bullets. The mouse input will be used as well if the player so
 desires, as the controls in game can be rebounded to the mouse. The functions
-ofthe software that are to be tested are the: window, collision, keyinput,
-menu,player, bullet and alien functions. The window function handles the window
+ofthe %% typo here
+software that are to be tested are the: window, collision, keyinput,
+menu,%%need a space here
+player, bullet and alien functions. The window function handles the window
 creation when the game is started. Collision handles all detection of sprites
 with one another. Keyinput handles whether a key has been pressed and what to
 do when that key is pressed. Menu handles the main menu game state. Player
@@ -132,6 +134,8 @@ handles the ship functionality and how it moves. Bullet handles how the ship
 fires
 bullets and how they are drawn. Lastly the alien function handles how the
 aliens are drawn on the screen and their A.I.
+%% for the paragraph above, you need "The collision function", "the KeyInput function", etc.
+%% instead of using them as proper nouns
 
 \subsection{Test Team}
 The test team for Pong Invaders will consist of the initial developers: Puru
@@ -141,7 +145,8 @@ Jetly, Rehan Theiveehathasan, and Karnvir Bining.
 \subsection{Automated Testing Approach}
 The automated testing approach that our team is adopting is JUnit. We will be
 using JUnit due to how widely used of a framework it is, as well as how easy it
-is to learn, and implement. We plan on using JUnit to automate testing for
+is to learn,%% don't need this comma
+ and implement. We plan on using JUnit to automate testing for %% the collision, alian, and keyinput modules/functions
 collision, alien, and keyinput to see if those functions output the correct
 type and expected values to other functions.
 
@@ -176,7 +181,7 @@ How test will be performed: With the game in an active running state, the
 program will be set to print the mouse coordinates whenever the mouse is moved.
 The mouse will be moved to the boundaries of the screen and it will be checked
 that the coordinates are equal to the screen length and width of the screen
-whenrespectively checked.
+whenrespectively checked. %% typo here
 					
 \item{Input Key Test\\}
 
@@ -206,7 +211,8 @@ Input: Keyboard and mouse inputs
 Output: Correct Menu option is followed 
 					
 How test will be performed: The game will be put in an active menu state and
-themenu screeen will be used to traverse different menu options. The Play now
+themenu%% typo
+screeen will be used to traverse different menu options. The Play now
 option will be checked to start the game. Followed by the how to play option
 which should display a how to play guide. Finally a re-binding option should be
 given so that the player can re-bind input keys for personal preference during
@@ -241,7 +247,7 @@ Type: Functional
 
 Initial State: In-Active Game State 
 
-Input: J-Unit test cases
+Input: J-Unit test cases  %% "JUnit" not "J-Unit"
 
 Output: Relevant return values for tested methods 
 
@@ -257,7 +263,8 @@ Input: none
 
 Output: Collision identification dialogue box or print statement 
 
-How test will be performed: The game will be in an active state and the player wil be set tol simply shoot bullets and stay in a static position. The program will be set to print each time a successful collision is made. After 3 successful bullet collisions, the program will stop bullet shots and wait for the enemies to hit the playable ship to check for final collision. 
+How test will be performed: The game will be in an active state and the player wil be set tol %% typo
+simply shoot bullets and stay in a static position. The program will be set to print each time a successful collision is made. After 3 successful bullet collisions, the program will stop bullet shots and wait for the enemies to hit the playable ship to check for final collision. 
 
 \item{Exit Game Test\\}
 
