@@ -1,0 +1,193 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+\author{Team \#10, Ben 10
+		\\ Rehan Theiveehathasan \texttt{theivers}
+		\\ Karnvir Bining                  \texttt{biningk}
+		\\ Puru Jetly                        \texttt{jetlyp}
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+November 13, 2016 & 1.0 & Initial changes\\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+\pagenumbering{arabic}
+\section{Introduction}
+
+\section{Anticipated and Unlikely Changes} \label{SecChange}
+
+\subsection{Anticipated Changes} \label{SecAchange}
+
+\begin{description}
+\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] 
+\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] 
+\item ...
+\end{description}
+\subsection{Unlikely Changes} \label{SecUchange}
+
+\begin{description}
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] 
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] 
+\item ...
+\end{description}
+\section{Module Hierarchy} \label{SecMH}
+
+\begin{description}
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:]
+\item ...
+\end{description}
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+{Hardware-Hiding Module} & ~ \\
+\midrule
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
+& ?\\
+& ?\\
+& ?\\
+& ?\\
+& ?\\
+& ?\\ 
+& ?\\
+\midrule
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
+& ?\\
+& ?\\
+\bottomrule
+\end{tabular}
+\caption{Module Hierarchy}
+\label{TblMH}
+\end{table}
+\section{Connection Between Requirements and Design} \label{SecConnection}
+
+\section{Module Decomposition} \label{SecMD}
+
+\subsection{Hardware Hiding Modules (\mref{mHH})}
+\begin{description}
+\item[Secrets:]
+\item[Services:]
+\item[Implemented By:] OS
+\end{description}
+
+\subsection{Behaviour-Hiding Module}
+\begin{description}
+\item[Secrets:]
+\item[Services:]
+\item[Implemented By:] --
+\end{description}
+
+\subsubsection{Input Format Module (\mref{mInput})}
+\begin{description}
+\item[Secrets:]
+\item[Services:]
+\item[Implemented By:] Pong Invaders
+\end{description}
+
+\subsubsection{Etc.}
+\subsection{Software Decision Module}
+\begin{description}
+\item[Secrets:] 
+\item[Services:] 
+\item[Implemented By:] --
+\end{description}
+\subsubsection{Etc.}
+
+\section{Traceability Matrix} \label{SecTM}
+\begin{table}[H]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Req.} & \textbf{Modules}\\
+\midrule
+R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
+R2 & \mref{mInput}, \mref{mParams}\\
+R3 & \mref{mVerify}\\
+R4 & \mref{mOutput}, \mref{mControl}\\
+R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
+R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
+R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
+R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
+R9 & \mref{mVerifyOut}\\
+R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
+R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Requirements and Modules}
+\label{TblRT}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{AC} & \textbf{Modules}\\
+\midrule
+\acref{acHardware} & \mref{mHH}\\
+\acref{acInput} & \mref{mInput}\\
+\acref{acParams} & \mref{mParams}\\
+\acref{acVerify} & \mref{mVerify}\\
+\acref{acOutput} & \mref{mOutput}\\
+\acref{acVerifyOut} & \mref{mVerifyOut}\\
+\acref{acODEs} & \mref{mODEs}\\
+\acref{acEnergy} & \mref{mEnergy}\\
+\acref{acControl} & \mref{mControl}\\
+\acref{acSeqDS} & \mref{mSeqDS}\\
+\acref{acSolver} & \mref{mSolver}\\
+\acref{acPlot} & \mref{mPlot}\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Anticipated Changes and Modules}
+\label{TblACT}
+\end{table}
+
+\section{Use Hierarchy Between Modules} \label{SecUse}
+\begin{figure}[H]
+\centering
+%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\caption{Use hierarchy among modules}
+\label{FigUH}
+\end{figure}
+%\section*{References}
+\bibliographystyle {plainnat}
+\bibliography {MG}
+\end{document}
