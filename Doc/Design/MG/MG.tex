@@ -108,7 +108,7 @@ Complimentary documentation includes a Module Interface Specifications(MIS) docu
 \section{Connection Between Requirements and Design} \label{SecConnection}
 
 \section{Module Decomposition} \label{SecMD}
-Module decomposition is a set of submodules that adhere's to the principle of  "information hiding." This principle of information hiding will be used as a fundamental concept for Pong Invader's object oriented development. Even though Pong Invader's is a stand alone project without any forseeable scalability, it will still be extremely beneficial to acheive modular design through module decomposition as Pong Invader's is created in phases.
+Module decomposition is the process of creating a set of submodules that adhere to the principle of  "information hiding." This principle of information hiding will be used as a fundamental concept for Pong Invader's object oriented development. Even though Pong Invader's is a stand alone project without any foreseeable scalability, it will still be extremely beneficial to achieve modular design through module decomposition as Pong Invader's is created in phases.
 
 \subsection{Hardware Hiding Modules (Pointing Devices, Keyboard, and Displays}
 \begin{description}
@@ -127,11 +127,11 @@ Module decomposition is a set of submodules that adhere's to the principle of  "
 \subsection{Output}
 \begin{description}
 \item[Secrets:] Data structures of what is displayed to the screen.
-\item[Services:] This module handles outputing the game state produced by all the following sub modules. The submodules are all subject to change if there are changes to the software requirements specifiications.
+\item[Services:] This module handles outputting the game state produced by all the following sub modules. The submodules are all subject to change if there are changes to the software requirements specifications.
 \item[Implemented By:] GameObject, Bullet, Alien, Player
 \end{description}
 
-\subsubsection{GameObjectt}
+\subsubsection{GameObject}
 \begin{description}
 \item[Secrets:] Data structure concerning game states, arrays and symbolic parameters for position, and velocity.
 \item[Services:] Handles game state, and delegates what to be displayed and when.
@@ -158,7 +158,7 @@ Module decomposition is a set of submodules that adhere's to the principle of  "
 \subsection{Controller}
 \begin{description}
 \item[Secrets:] Data structures and data type of inputs that are to be processed.
-\item[Services:] This module handles all logic of the Pong Invader's system. All processed logic and mathamatical representations of the game state are then passed to GameObject. 
+\item[Services:] This module handles all logic of the Pong Invader's system. All processed logic and mathematical representations of the game state are then passed to GameObject. 
 \item[Implemented By:] Collision
 \end{description}
 
