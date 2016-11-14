@@ -77,8 +77,11 @@ Complimentary documentation includes a Module Interface Specifications(MIS) docu
 \section{Module Hierarchy} \label{SecMH}
 
 \begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:]
-\item ...
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
+\item [\refstepcounter{mnum} \mthemnum :]  Input Format Module
+\item [\refstepcounter{mnum} \mthemnum :] Output Module
+\item [\refstepcounter{mnum} \mthemnum :] Controller Module
+\item [\refstepcounter{mnum} \mthemnum :] Physics Module 
 \end{description}
 \begin{table}[h!]
 \centering
@@ -88,18 +91,13 @@ Complimentary documentation includes a Module Interface Specifications(MIS) docu
 \midrule
 {Hardware-Hiding Module} & ~ \\
 \midrule
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ~\\
+& Input Format Module\\
+& Output Module\\
+& Controller Module\\
 \midrule
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {~}\\
+& Physics Module\\
 \bottomrule
 \end{tabular}
 \caption{Module Hierarchy}
