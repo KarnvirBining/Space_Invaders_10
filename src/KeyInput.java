@@ -1,7 +1,47 @@
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
+/**
+* Window
+* <br>
+* <table><tr><td> 
+*  <table summary="">
+*   <tr>
+*      <td>Routine name|</td><td>In|</td><td>Out|</td><td>Exceptions</td>
+*      <tr>
+*      <td>KeyInput</td><td>Handler</td><td>-</td><td>-</td>
+*      </tr>
+*      <tr>
+*      <td>keyPressed</td><td>KeyEvent</td><td>-</td><td>-</td>
+*      </tr>
+*      <tr>
+*      <td>keyReleased</td><td>KeyEvent</td><td>-</td><td>-</td>
+*      </tr>
+*   </tr>
+* </table>
+* <br>
+* Assumptions: No Assumptions <br><br>
+* 
+* State Variables: 
+* <br>
+* handler: Handler <br>
+* keyDown: boolean[]<br>
+* key: int<br>
+* tempObject: GameObject<br>
+* e: KeyEvent<br>
+* 
+* Environment  Variables: <br>
+* Keyboard: Input Device<br>
+* 
+* Access Routine Semantics:<br><br> 
+* keyInput(handler):<br>
+* transition: Initializes handler and keyDown array<br>
+* keyPressed(e):<br>
+* transition: When  key 'a' pressed player goes left. When key 'd' pressed player goes right. <br>
+* keyReleased(e):<br>
+* transition: When  key 'a' respective released sets keyDown boolean value to false. When  key 'd' released sets respective keyDown boolean value to false. <br>
+* 
+* 
+*/
 public class KeyInput extends KeyAdapter{
 	
 	private Handler handler;

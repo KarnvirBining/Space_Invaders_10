@@ -1,7 +1,9 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
+/**
+ * Uses abstract class GameObject so MIS of GameObject is the same as Alien
+ */
 public class Alien extends GameObject {
 
 	public Alien(float x, float y, ID id) {
