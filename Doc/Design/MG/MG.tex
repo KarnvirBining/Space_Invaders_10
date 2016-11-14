@@ -115,52 +115,52 @@ between requirements and modules is listed in Table \ref{TblRT}.
 \section{Module Decomposition} \label{SecMD}
 Module decomposition is the process of creating a set of submodules that adhere to the principle of  "information hiding." This principle of information hiding will be used as a fundamental concept for Pong Invader's object oriented development. Even though Pong Invader's is a stand-alone project without any foreseeable scalability, it will still be extremely beneficial to achieve modular design through module decomposition as Pong Invader's is created in phases.
 
-\subsection{M1: Hardware Hiding Modules (Pointing Devices, Keyboard, and Displays}
+\subsection{Hardware Hiding Modules (Pointing Devices, Keyboard, and Displays}
 \begin{description}
 \item[Secrets:] Data structures and algorithms that are implemented by device drivers, and hardware.
 \item[Services:] Allows the system to access and handle input/output from the hardware and software.
 \item[Implemented By:] The Java Virtual Machine, and the respective users' operating system.
 \end{description}
 
-\subsection{M2: Input}
+\subsection{Input}
 \begin{description}
 \item[Secrets:] Data structures and data type of inputs.
 \item[Services:] This module handles user keyboard input data, and then sends the input data to the correct modules to allow for event processing.
 \item[Implemented By:] KeyInput
 \end{description}
 
-\subsection{M3: Output}
+\subsection{Output}
 \begin{description}
 \item[Secrets:] Data structures of what is displayed to the screen.
 \item[Services:] This module handles outputting the game state produced by all the following sub modules. The submodules are all subject to change if there are changes to the software requirements specifications.
 \item[Implemented By:] GameObject, Bullet, Alien, Player
 \end{description}
 
-\subsubsection{M4: GameObject}
+\subsubsection{GameObject}
 \begin{description}
 \item[Secrets:] Data structure concerning game states, arrays and symbolic parameters for position, and velocity.
 \item[Services:] Handles game state, and delegates what to be displayed and when.
 \end{description}
 
-\subsubsection{M5: Alien}
+\subsubsection{Alien}
 \begin{description}
 \item[Secrets:] Data structure of alien object.
 \item[Services] Sends alien data of velocity, position, and description of what to rasterize to GameObject.
 \end{description}
 
-\subsubsection{M6: Bullet}
+\subsubsection{Bullet}
 \begin{description}
 \item[Secrets:] Data structure of bullet object.
 \item[Services:] Sends bullet data of velocity, position, and description of what to rasterize to GameObject.
 \end{description}
 
-\subsubsection{M7: Player}
+\subsubsection{Player}
 \begin{description}
 \item[Secrets:] Data structure of player object.
 \item[Services:] Sends player data of velocity, position, and description of what to rasterize to GameObject.
 \end{description}
 
-\subsection{M8: Controller}
+\subsection{Controller}
 \begin{description}
 \item[Secrets:] Data structures and data type of inputs that are to be processed.
 \item[Services:] This module handles all logic of the Pong Invader's system. All processed logic and mathematical representations of the game state are then passed to GameObject. 
@@ -175,24 +175,20 @@ Module decomposition is the process of creating a set of submodules that adhere 
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & M1\\
-R2 & M2\\
-R3 & M8\\
-R4 & M5, M6, M7\\
-R5 & M4\\
-R6 & M3\\
+R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
+R2 & \mref{mInput}, \mref{mParams}\\
+R3 & \mref{mVerify}\\
+R4 & \mref{mOutput}, \mref{mControl}\\
+R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
+R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
+R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
+R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
+R9 & \mref{mVerifyOut}\\
+R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
+R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
-\begin{description}
-\item[R1]: Hardware is capable of I/O handling. 
-\item[R2]: Game reads input from user.
-\item[R3]: Processes and stores user input through a physics system.
-\item[R4]: Game keeps track of current display data.
-\item[R5]: Game keeps track of current game state.
-\item[R6]: Game outputs all relevant display data.
-\end{description}
-
 \label{TblRT}
 \end{table}
 \begin{table}[H]
@@ -201,18 +197,12 @@ R6 & M3\\
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+\acref{acHardware} & M1\\
+\acref{acInput} & M3\\
+\acref{acParams} & M3, M4, M5\\
+\acref{acVerify} & M4\\
+\acref{acOutput} & M4\\
+\bottomrule
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
