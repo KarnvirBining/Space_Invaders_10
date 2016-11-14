@@ -1,9 +1,72 @@
-
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-
+/**
+ * Game
+ * <br>
+ * <table><tr><td> 
+ *  <table summary="">
+ *   <tr>
+ *      <td>Routine name|</td><td>In</td><td>|Out|</td><td>Exceptions</td>
+ *      <tr>
+ *      <td>Game</td><td></td><td></td><td></td>
+ *      </tr>
+ *      <tr>
+ *      <td>start</td><td></td><td></td><td></td>
+ *      </tr>
+ *      <tr>
+ *      <td>stop</td><td></td><td></td><td></td>
+ *      </tr>
+ *      <tr>
+ *      <td>tick</td><td></td><td></td><td></td>
+ *      </tr>
+ *      <tr>
+ *      <td>render</td><td></td><td></td><td></td>
+ *      </tr>
+ *      <td>main</td><td>String[]</td><td></td><td></td>
+ *      </tr>
+ *   </tr>
+ * </table>
+ * <br>
+ * Assumptions: No Assumptions <br><br>
+ * 
+ * State Variables: 
+ * <br>
+ * WIDTH: int <br>
+ *
+ * HEIGHT: int<br>
+ * handler: Object<br>
+ * thread: Thread<br>
+ * running: boolean<br>
+ * lastTime: long<br>
+ * amountofTicks: double<br>
+ * delta: double<br>
+ * timer: long<br>
+ * frames: int<br>
+ * now: long<br>
+ * bs: BufferStartegy<br>
+ * g: Graphics<br>
+ * <br>
+ * 
+ * Environment  Variables: <br>
+ * Screen: Display Device<br>
+ * Keyboard: Input Device<br><br>
+ * 
+ * Access Routine Semantics: <br><br>
+ * Game():<br>
+ * transition: Initializes keyboard listener and calls Window class. In the window draws ship and alien <br>
+ * start():<br>
+ * transition: Initializes thread and starts it. <br>
+ * stop():<br>
+ * transition: Stops the thread from running <br>
+ * run():<br>
+ * transition: Game loop <br>
+ * render():<br>
+ * transition: Manages the allotment of memory by using Buffer Strategy. Renders black background on to window. <br>
+ * 
+ * 
+ */	
 public class Game extends Canvas implements Runnable  {
 
 	private static final long serialVersionUID = -1930825029999864569L;
