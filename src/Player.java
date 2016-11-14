@@ -1,9 +1,10 @@
 
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
+/**
+ * Uses abstract class GameObject so MIS of GameObject is the same as Player
+ */
 public class Player extends GameObject {
 
 	public Player(float x, float y, ID id) {
