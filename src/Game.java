@@ -88,7 +88,8 @@ public class Game extends Canvas implements Runnable  {
 		Menu,
 		Game,
 		Instructions, 
-		GAMEOVER
+		GAMEOVER,
+		WIN
 		
 	};
 
@@ -107,7 +108,7 @@ public class Game extends Canvas implements Runnable  {
 		if(gameState == STATE.Game){
 
 			handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
-			for(int i = 0; i<10; i++){
+			for(int i = 0; i<7; i++){
 				handler.addObject(new Alien(70+(i*30),100,ID.Alien));
 			}
 		}
@@ -189,7 +190,7 @@ public class Game extends Canvas implements Runnable  {
 		handler.reneder(g);
 		if(gameState == STATE.Game){
 			//hud.render(g);
-		}else if(gameState == STATE.Menu || gameState == STATE.Instructions || gameState == STATE.GAMEOVER){
+		}else if(gameState == STATE.Menu || gameState == STATE.Instructions || gameState == STATE.GAMEOVER || gameState == STATE.WIN){
 			menu.render(g);
 		}
 
