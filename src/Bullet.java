@@ -20,12 +20,12 @@ public class Bullet extends GameObject {
 	
 	public void render(Graphics g) {
 		
-		Graphics2D g2d =(Graphics2D) g;
-		g.setColor(Color.green);
-		g2d.draw(getBounds());
+//		Graphics2D g2d =(Graphics2D) g;
+//		g.setColor(Color.green);
+//		g2d.draw(getBounds());
 		
 		
-		g.setColor(Color.white);
+		g.setColor(Color.yellow);
 		g.fillRect((int)x, (int)y, 15, 15);
 	}
 	
