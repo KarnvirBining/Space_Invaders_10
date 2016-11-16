@@ -1,4 +1,5 @@
 
+
 import java.awt.Graphics;
 import java.util.LinkedList;
 /**
@@ -73,7 +74,7 @@ LinkedList<GameObject> object = new LinkedList<GameObject>();
 		
 	}
 	
-	public void removeobject(GameObject object){
+	public void removeObject(GameObject object){
 		this.object.remove(object);
 	}
 	

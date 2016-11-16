@@ -1,3 +1,4 @@
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -67,6 +68,9 @@ import java.awt.image.BufferStrategy;
  * 
  * 
  */	
+
+
+
 public class Game extends Canvas implements Runnable  {
 
 	private static final long serialVersionUID = -1930825029999864569L;
@@ -79,6 +83,7 @@ public class Game extends Canvas implements Runnable  {
 	private Handler handler;
 	private HUD hud;
 	
+
 	public Game(){
 		handler = new Handler();
 		this.addKeyListener(new KeyInput(handler));
@@ -86,17 +91,28 @@ public class Game extends Canvas implements Runnable  {
 		
 		hud = new HUD();
 		
-	handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
+		
+		handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
+	
+//		handler.addObject(new Alien(100,100,ID.Alien));
+//		handler.addObject(new Alien(70,100,ID.Alien));
 		for(int i = 0; i<5; i++){
 			handler.addObject(new Alien(70+(i*30),100,ID.Alien));
 		}
-		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet, handler));
-
+//		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet, handler));
+//		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet, handler));
+//		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet, handler));
+//		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet, handler));
+//		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet, handler));
+		
+			
+		
 	}
 
 
 
 	public synchronized void start(){
+		
 		thread = new Thread(this);
 		thread.start();
 		running = true;
@@ -147,6 +163,7 @@ public class Game extends Canvas implements Runnable  {
 	private void tick(){
 		handler.tick();
 		hud.tick();
+		
 	}
 	
 	private void render(){
@@ -161,14 +178,13 @@ public class Game extends Canvas implements Runnable  {
 		g.setColor(Color.black);
 		g.fillRect(0,0,WIDTH,HEIGHT);
 		
+		
 		handler.reneder(g);
 		hud.render(g);
-		
 		
 		g.dispose();
 		bs.show();
 	}
-	
 	//sets bounds for ship to not leave game screen
 	public static int Clamp(int var, int min, int max){
 		if(var >= max){

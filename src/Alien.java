@@ -13,29 +13,25 @@ public class Alien extends GameObject {
 	}
 	
 
-	@Override
 	public void tick() {
 			x += velX;
 			y += velY;
 			
 			if(x <= 0 || x >= Game.WIDTH-16) velX *= -1;
 			if(x <= 0 || x >= Game.WIDTH-16) y -= -39;
-			//////////////////////////////////////////////////////////// Game State Change
+			//Game State Change
 			if(y >= Game.HEIGHT-100){
 				velX = 0;
 				x = 0+32;
 			}
 	}
 
-	@Override
 	public void render(Graphics g) {
 		g.setColor(Color.white);
 		g.fillRect((int)x, (int)y, 16, 16);
 	}
 
-	@Override
 	public Rectangle getBounds() {
-		
 		return new Rectangle((int)x,(int)y ,16, 16);
 	}
 
