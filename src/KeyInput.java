@@ -45,7 +45,7 @@ import java.awt.event.KeyEvent;
 public class KeyInput extends KeyAdapter{
 	
 	private Handler handler;
-	private boolean[] keyDown= new boolean[4];
+	private boolean[] keyDown= new boolean[6];
 	
 	public KeyInput(Handler handler){
 		this.handler =handler;
@@ -53,6 +53,8 @@ public class KeyInput extends KeyAdapter{
 		keyDown[1] = false;
 		keyDown[2] = false;
 		keyDown[3] = false;
+		keyDown[4] = false;
+		keyDown[5] = false;
 	}
 	
 	public void keyPressed(KeyEvent e){
@@ -67,7 +69,7 @@ public class KeyInput extends KeyAdapter{
 				
 				//if(key == KeyEvent.VK_W) {tempObject.setVelY(-5);	keyDown[0] = true;}
 				//if(key == KeyEvent.VK_S) {tempObject.setVelY(5);	keyDown[1] = true;}
-				if(key == KeyEvent.VK_D) {tempObject.setVelX(5); tempObject1.setVelX((tempObject.getVelX();));	keyDown[2] = true;}
+				if(key == KeyEvent.VK_D) {tempObject.setVelX(5); 	keyDown[2] = true;}
 				if(key == KeyEvent.VK_A) {tempObject.setVelX(-5);	keyDown[3] = true;}
 			}
 
@@ -76,6 +78,9 @@ public class KeyInput extends KeyAdapter{
 					tempObject1.setX((int)tempObject.getX());
 					tempObject1.setVelY(-5); keyDown[0] = true;
 				}
+
+				if(key == KeyEvent.VK_D) {tempObject1.setVelX(5);	keyDown[4] = true;}
+				if(key == KeyEvent.VK_A) {tempObject1.setVelX(-5);	keyDown[5] = true;}
 			}
 		}
 		
@@ -88,6 +93,7 @@ public class KeyInput extends KeyAdapter{
 		
 		for (int i = 0; i<handler.object.size(); i++){
 			GameObject tempObject = handler.object.get(i);
+			GameObject tempObject1 = handler.object.get(i);
 			
 			if (tempObject.getId()==ID.Player) {
 				
@@ -104,8 +110,16 @@ public class KeyInput extends KeyAdapter{
 
 			}
 
-			if (tempObject.getId() == ID.Bullet) {
-				if(key == KeyEvent.VK_SPACE) keyDown[0] = false;
+			if (tempObject1.getId() == ID.Bullet) {
+				if(key == KeyEvent.VK_SPACE) {
+					tempObject1.setVelX(0);
+					tempObject1.setX((int)tempObject.getX());
+					keyDown[0] = false;
+				}
+				if(key == KeyEvent.VK_D) keyDown[4] = false;
+				if(key == KeyEvent.VK_A) keyDown[5] = false;
+				if (!keyDown[4]&& !keyDown[5]) tempObject1.setVelX(0);
+
 			}
 		}
 	}
