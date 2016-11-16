@@ -165,7 +165,18 @@ public class Game extends Canvas implements Runnable  {
 		bs.show();
 	}
 	
-	
+	//sets bounds for ship to not leave game screen
+	public static int Clamp(int var, int min, int max){
+		if(var >= max){
+			return var = max;
+		}
+		else if(var <= min){
+			return var = min;
+		}
+		
+		else
+			return var;
+	}
 
 	public static void main (String args[]){
 		new Game();
