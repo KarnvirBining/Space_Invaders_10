@@ -77,16 +77,19 @@ public class Game extends Canvas implements Runnable  {
 	private boolean running = false;
 	
 	private Handler handler;
+	private HUD hud;
 	
 	public Game(){
 		handler = new Handler();
 		this.addKeyListener(new KeyInput(handler));
 		new Window(WIDTH,HEIGHT,"Pong Invaders",this);
 		
+		hud = new HUD();
 		
-		
-		handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player));
-		handler.addObject(new Alien(100,100,ID.Alien));
+	handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
+		for(int i = 0; i<5; i++){
+			handler.addObject(new Alien(100+(i*40),100,ID.Alien));
+		}
 		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet));
 
 	}
@@ -143,6 +146,7 @@ public class Game extends Canvas implements Runnable  {
 	
 	private void tick(){
 		handler.tick();
+		hud.tick();
 	}
 	
 	private void render(){
@@ -158,6 +162,7 @@ public class Game extends Canvas implements Runnable  {
 		g.fillRect(0,0,WIDTH,HEIGHT);
 		
 		handler.reneder(g);
+		hud.render(g);
 		
 		
 		g.dispose();
