@@ -78,20 +78,33 @@ public class Game extends Canvas implements Runnable  {
 	
 	private Handler handler;
 	private HUD hud;
+	private Menu menu;
+	
+	public enum STATE {
+		Menu,
+		Game,
+		Instructions
+	};
+
+	public STATE gameState = STATE.Menu;
 	
 	public Game(){
 		handler = new Handler();
+		menu = new Menu(this, handler);
 		this.addKeyListener(new KeyInput(handler));
+		this.addMouseListener(menu);
 		new Window(WIDTH,HEIGHT,"Pong Invaders",this);
 		
 		hud = new HUD();
 		
-	handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
-		for(int i = 0; i<5; i++){
-			handler.addObject(new Alien(70+(i*30),100,ID.Alien));
-		}
-		handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet, handler));
+		if(gameState == STATE.Game){
 
+			handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
+			for(int i = 0; i<5; i++){
+				handler.addObject(new Alien(100+(i*40),100,ID.Alien));
+			}
+			handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet));
+		}
 	}
 
 
@@ -146,7 +159,11 @@ public class Game extends Canvas implements Runnable  {
 	
 	private void tick(){
 		handler.tick();
-		hud.tick();
+		if(gameState == STATE.Game){
+			hud.tick();
+		}else if(gameState == STATE.Menu){
+			menu.tick(); 
+		}
 	}
 	
 	private void render(){
@@ -162,7 +179,12 @@ public class Game extends Canvas implements Runnable  {
 		g.fillRect(0,0,WIDTH,HEIGHT);
 		
 		handler.reneder(g);
-		hud.render(g);
+		if(gameState == STATE.Game){
+			hud.render(g);
+		}else if(gameState == STATE.Menu || gameState == STATE.Instructions){
+			menu.render(g);
+		}
+
 		
 		
 		g.dispose();
