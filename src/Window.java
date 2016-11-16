@@ -9,7 +9,38 @@ public class Window extends Canvas{
 
 
 	private static final long serialVersionUID = -650585914685456797L;
-
+/**
+ * Window
+ * <br>
+ * <table><tr><td> 
+ *  <table summary="">
+ *   <tr>
+ *      <td>Routine name|</td><td>In|</td><td>Out|</td><td>Exceptions</td>
+ *      <tr>
+ *      <td>Window</td><td>int,int,String,Game</td><td>-</td><td>-</td>
+ *      </tr>
+ *   </tr>
+ * </table>
+ * <br>
+ * Assumptions: No Assumptions <br><br>
+ * 
+ * State Variables: 
+ * <br>
+ * width: int <br>
+ * height: int<br>
+ * title: String<br>
+ * game: Game<br><br>
+ * 
+ * Environment  Variables: <br>
+ * Screen: Display Device<br><br>
+ * 
+ * Access Routine Semantics: <br><br>
+ * Window(width,height,title,game):<br>
+ * transition: A window is created in middle of screen with exit button by resolution and title defined in Game class.
+ * 
+ * 
+ * 
+ */
 	public Window (int width, int height, String title, Game game){
 		JFrame frame = new JFrame(title);
 		

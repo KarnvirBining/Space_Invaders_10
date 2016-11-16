@@ -1,25 +1,28 @@
+
+
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 /**
  * Uses abstract class GameObject so MIS of GameObject is the same as Player
  */
 public class Player extends GameObject {
 
-    Handler handler;
-
+	Handler handler;
+	
 	public Player(float x, float y, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
-		
 
 		
 	}
 
 	@Override
 	public void tick() {
-		x += velX;
+		x+=velX;
 		y +=velY;
+		
 		x = Game.Clamp((int)x, 3, Game.WIDTH -39);
 		collision();
 	}
@@ -39,20 +42,20 @@ public class Player extends GameObject {
 		}
 	}
 
-
 	@Override
 	public void render(Graphics g) {
+		
 //		Graphics2D g2d =(Graphics2D) g;
 //		g.setColor(Color.green);
 //		g2d.draw(getBounds());
-		g.setColor(Color.white);
+		
+		g.setColor(Color.red);
 		g.fillRect((int)x, (int)y, 32, 32);
 		
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		
 		return new Rectangle(0, Game.HEIGHT-75 ,Game.WIDTH, 32);
 	}
 

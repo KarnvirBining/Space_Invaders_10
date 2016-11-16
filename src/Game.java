@@ -1,3 +1,4 @@
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -67,6 +68,9 @@ import java.awt.image.BufferStrategy;
  * 
  * 
  */	
+
+
+
 public class Game extends Canvas implements Runnable  {
 
 	private static final long serialVersionUID = -1930825029999864569L;
@@ -88,6 +92,7 @@ public class Game extends Canvas implements Runnable  {
 
 	public STATE gameState = STATE.Menu;
 	
+
 	public Game(){
 		handler = new Handler();
 		menu = new Menu(this, handler);
@@ -97,6 +102,7 @@ public class Game extends Canvas implements Runnable  {
 		
 		hud = new HUD();
 		
+<<<<<<< HEAD
 		if(gameState == STATE.Game){
 
 			handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
@@ -105,11 +111,16 @@ public class Game extends Canvas implements Runnable  {
 			}
 			handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet));
 		}
+		
+			
+		
+>>>>>>> 85f7d5c0a300adc35abb8a7ec7d22ad4817aa8c9
 	}
 
 
 
 	public synchronized void start(){
+		
 		thread = new Thread(this);
 		thread.start();
 		running = true;
@@ -159,11 +170,14 @@ public class Game extends Canvas implements Runnable  {
 	
 	private void tick(){
 		handler.tick();
+<<<<<<< HEAD
 		if(gameState == STATE.Game){
 			hud.tick();
 		}else if(gameState == STATE.Menu){
 			menu.tick(); 
 		}
+		
+>>>>>>> 85f7d5c0a300adc35abb8a7ec7d22ad4817aa8c9
 	}
 	
 	private void render(){
@@ -178,6 +192,7 @@ public class Game extends Canvas implements Runnable  {
 		g.setColor(Color.black);
 		g.fillRect(0,0,WIDTH,HEIGHT);
 		
+		
 		handler.reneder(g);
 		if(gameState == STATE.Game){
 			hud.render(g);
@@ -186,11 +201,9 @@ public class Game extends Canvas implements Runnable  {
 		}
 
 		
-		
 		g.dispose();
 		bs.show();
 	}
-	
 	//sets bounds for ship to not leave game screen
 	public static int Clamp(int var, int min, int max){
 		if(var >= max){
