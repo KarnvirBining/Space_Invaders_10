@@ -107,8 +107,8 @@ public class Game extends Canvas implements Runnable  {
 		if(gameState == STATE.Game){
 
 			handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
-			for(int i = 0; i<5; i++){
-				handler.addObject(new Alien(100+(i*40),100,ID.Alien));
+			for(int i = 0; i<10; i++){
+				handler.addObject(new Alien(70+(i*30),100,ID.Alien));
 			}
 		}
 	}

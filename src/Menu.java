@@ -24,8 +24,12 @@ public class Menu extends MouseAdapter{
 			if(mouseOver(mx, my, 225, 100, 200, 64)){
 				game.gameState = Game.STATE.Game;
 				handler.addObject(new Player(Game.WIDTH/2-32,Game.HEIGHT-75,ID.Player, handler));
-				for(int i = 0; i<5; i++){
-					handler.addObject(new Alien(100+(i*40),100,ID.Alien));
+
+				for(int i = 0; i<12; i++){
+					//					handler.addObject(new Alien(70+(i*30),0,ID.Alien));
+					for(int j = 0; j<3; j++) {
+						handler.addObject(new Alien(70+(i*30),(j*30),ID.Alien));
+					}
 				}
 
 			}
@@ -42,6 +46,20 @@ public class Menu extends MouseAdapter{
 		}
 
 		if(game.gameState == Game.STATE.Game){
+			int counter = 0;
+			for (int i = 0; i<handler.object.size(); i++){
+				GameObject tempObject = handler.object.get(i);
+				if (tempObject.getId() == ID.Alien) {
+					counter++;
+				}
+			}
+			if (counter == 0){
+				handler.clearEnemys();
+				game.gameState = Game.STATE.WIN;
+			}
+		}
+
+		if(game.gameState == Game.STATE.Game){
 			if(HUD.HEALTH != 100){
 				handler.clearEnemys();
 				game.gameState = Game.STATE.GAMEOVER;
@@ -50,7 +68,7 @@ public class Menu extends MouseAdapter{
 		}
 
 		//Back Button 
-		if(game.gameState == Game.STATE.Instructions || game.gameState == Game.STATE.GAMEOVER){
+		if(game.gameState == Game.STATE.Instructions || game.gameState == Game.STATE.GAMEOVER || game.gameState == Game.STATE.WIN){
 			if (mouseOver(mx, my, 225, 300, 200, 64)){
 				game.gameState = Game.STATE.Menu;
 				return;
@@ -122,6 +140,20 @@ public class Menu extends MouseAdapter{
 			g.setFont(fnt);
 			g.setColor(Color.white);
 			g.drawString("GAME OVER", 175, 50);
+
+			g.setFont(fnt2);
+			g.setColor(Color.white);
+			g.drawRect(225, 300, 200, 64);
+			g.drawString("Back", 295, 345);
+
+		}
+		else if(game.gameState == Game.STATE.WIN){
+			Font fnt = new Font("arial", 1, 50);
+			Font fnt2 = new Font("arial", 1, 20);
+
+			g.setFont(fnt);
+			g.setColor(Color.white);
+			g.drawString("Victory", 175, 50);
 
 			g.setFont(fnt2);
 			g.setColor(Color.white);
