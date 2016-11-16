@@ -2,5 +2,6 @@
 
 public enum ID {
 	Player(),
-	Alien();
+	Alien(),
+	Bullet();
 }
