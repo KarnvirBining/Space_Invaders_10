@@ -10,8 +10,11 @@ public class Bullet extends GameObject {
 	}
 	@Override
 	public void tick() {
-		x += velX;
-		y += velY;
+		//x += velX;
+		y += -5;
+		if(y <= 20){
+			handler.removeObject(this);
+		}
 		collision();
 	}
 	
@@ -43,6 +46,6 @@ public class Bullet extends GameObject {
 	}
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle(200, Game.HEIGHT-300 ,32, 32);
+		return new Rectangle((int) x, (int) y ,15, 15);
 	}
 }
