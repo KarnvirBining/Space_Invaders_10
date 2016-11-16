@@ -46,8 +46,20 @@ import java.awt.event.KeyEvent;
 public class KeyInput extends KeyAdapter{
 	
 	private Handler handler;
-	private boolean[] keyDown= new boolean[4];
-	public static float dx;
+	private boolean[] keyDown = new boolean[4];
+	private static float dx;
+	private long lastShot = 0;
+
+	private void try2Shoot() {
+		long wait = 500;
+		if (System.currentTimeMillis() - lastShot < wait) {
+			// Do nothing if wait is not satisfied
+		}
+		else {
+			lastShot = System.currentTimeMillis();
+			handler.addObject(new Bullet(dx+8,Game.HEIGHT-75,ID.Bullet, handler));
+		}
+	}
 	
 	public KeyInput(Handler handler){
 		this.handler =handler;
@@ -71,13 +83,10 @@ public class KeyInput extends KeyAdapter{
 				if(key == KeyEvent.VK_D) {tempObject.setVelX(5); dx+=5;	keyDown[2] = true;}
 				if(key == KeyEvent.VK_A) {tempObject.setVelX(-5);	dx-=5;  keyDown[3] = true;}
 				if(key == KeyEvent.VK_SPACE) {
-					handler.addObject(new Bullet(dx+8,Game.HEIGHT-75,ID.Bullet, handler));	
+					try2Shoot();
 					keyDown[0] = true;
-					}
-				
+				}
 			}
-			
-			
 		}
 		
 		if (key == KeyEvent.VK_ESCAPE) System.exit(1);
