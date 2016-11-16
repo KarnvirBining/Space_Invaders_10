@@ -15,7 +15,7 @@ public class Player extends GameObject {
 
 	@Override
 	public void tick() {
-		x+=velX;
+		x += velX;
 		y +=velY;
 		x = Game.Clamp((int)x, 3, Game.WIDTH -39);
 	}

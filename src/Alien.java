@@ -13,6 +13,7 @@ public class Alien extends GameObject {
 	}
 	
 
+	@Override
 	public void tick() {
 			x += velX;
 			y += velY;
@@ -26,6 +27,7 @@ public class Alien extends GameObject {
 			}
 	}
 
+	@Override
 	public void render(Graphics g) {
 		g.setColor(Color.white);
 		g.fillRect((int)x, (int)y, 16, 16);
