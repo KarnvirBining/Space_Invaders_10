@@ -87,7 +87,9 @@ public class Game extends Canvas implements Runnable  {
 	public enum STATE {
 		Menu,
 		Game,
-		Instructions
+		Instructions, 
+		GAMEOVER
+		
 	};
 
 	public STATE gameState = STATE.Menu;
@@ -186,8 +188,8 @@ public class Game extends Canvas implements Runnable  {
 		
 		handler.reneder(g);
 		if(gameState == STATE.Game){
-			hud.render(g);
-		}else if(gameState == STATE.Menu || gameState == STATE.Instructions){
+			//hud.render(g);
+		}else if(gameState == STATE.Menu || gameState == STATE.Instructions || gameState == STATE.GAMEOVER){
 			menu.render(g);
 		}
 

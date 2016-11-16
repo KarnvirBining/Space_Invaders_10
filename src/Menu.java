@@ -40,9 +40,17 @@ public class Menu extends MouseAdapter{
 				System.exit(1);
 			}
 		}
-		
+
+		if(game.gameState == Game.STATE.Game){
+			if(HUD.HEALTH != 100){
+				handler.clearEnemys();
+				game.gameState = Game.STATE.GAMEOVER;
+				HUD.HEALTH = 100;
+			}
+		}
+
 		//Back Button 
-		if(game.gameState == Game.STATE.Instructions){
+		if(game.gameState == Game.STATE.Instructions || game.gameState == Game.STATE.GAMEOVER){
 			if (mouseOver(mx, my, 225, 300, 200, 64)){
 				game.gameState = Game.STATE.Menu;
 				return;
@@ -66,7 +74,7 @@ public class Menu extends MouseAdapter{
 	public void tick(){
 
 	}
-	
+
 	public void render(Graphics g){
 		if(game.gameState == Game.STATE.Menu){
 			Font fnt = new Font("arial", 1, 50);
@@ -106,6 +114,20 @@ public class Menu extends MouseAdapter{
 			g.setColor(Color.white);
 			g.drawRect(225, 300, 200, 64);
 			g.drawString("Back", 295, 345);
+		}
+		else if(game.gameState == Game.STATE.GAMEOVER){
+			Font fnt = new Font("arial", 1, 50);
+			Font fnt2 = new Font("arial", 1, 20);
+
+			g.setFont(fnt);
+			g.setColor(Color.white);
+			g.drawString("GAME OVER", 175, 50);
+
+			g.setFont(fnt2);
+			g.setColor(Color.white);
+			g.drawRect(225, 300, 200, 64);
+			g.drawString("Back", 295, 345);
+
 		}
 	}
 }
