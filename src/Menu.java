@@ -21,14 +21,13 @@ public class Menu extends MouseAdapter{
 
 		if(game.gameState == Game.STATE.Menu){
 
-			//Start Game menu option
 			if(mouseOver(mx, my, 225, 100, 200, 64)){
 				game.gameState = Game.STATE.Game;
 				handler.addObject(new Player(Game.WIDTH/2-32,Game.HEIGHT-75,ID.Player, handler));
 				for(int i = 0; i<5; i++){
 					handler.addObject(new Alien(100+(i*40),100,ID.Alien));
 				}
-				handler.addObject(new Bullet(Game.WIDTH/2-32,Game.HEIGHT-75,ID.Bullet));
+
 			}
 
 			//Instructions menu option

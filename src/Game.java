@@ -101,20 +101,14 @@ public class Game extends Canvas implements Runnable  {
 		new Window(WIDTH,HEIGHT,"Pong Invaders",this);
 		
 		hud = new HUD();
-		
-<<<<<<< HEAD
+
 		if(gameState == STATE.Game){
 
 			handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
 			for(int i = 0; i<5; i++){
 				handler.addObject(new Alien(100+(i*40),100,ID.Alien));
 			}
-			handler.addObject(new Bullet(WIDTH/2-32,HEIGHT-75,ID.Bullet));
 		}
-		
-			
-		
->>>>>>> 85f7d5c0a300adc35abb8a7ec7d22ad4817aa8c9
 	}
 
 
@@ -170,14 +164,11 @@ public class Game extends Canvas implements Runnable  {
 	
 	private void tick(){
 		handler.tick();
-<<<<<<< HEAD
 		if(gameState == STATE.Game){
 			hud.tick();
 		}else if(gameState == STATE.Menu){
 			menu.tick(); 
 		}
-		
->>>>>>> 85f7d5c0a300adc35abb8a7ec7d22ad4817aa8c9
 	}
 	
 	private void render(){
