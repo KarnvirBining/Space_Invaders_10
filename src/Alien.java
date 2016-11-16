@@ -21,7 +21,7 @@ public class Alien extends GameObject {
 			if(x <= 0 || x >= Game.WIDTH-16) velX *= -1;
 			if(x <= 0 || x >= Game.WIDTH-16) y -= -39;
 			//////////////////////////////////////////////////////////// Game State Change
-			if(y >= Game.HEIGHT-150){
+			if(y >= Game.HEIGHT-100){
 				velX = 0;
 				x = 0+32;
 			}
@@ -35,8 +35,8 @@ public class Alien extends GameObject {
 
 	@Override
 	public Rectangle getBounds() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Rectangle((int)x,(int)y ,16, 16);
 	}
 
 }
