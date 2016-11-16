@@ -9,7 +9,7 @@ public class Alien extends GameObject {
 	public Alien(float x, float y, ID id) {
 		
 		super(x, y, id);
-		velX = 5;
+		velX = 2;
 	}
 	
 

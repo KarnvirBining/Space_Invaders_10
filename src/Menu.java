@@ -117,6 +117,7 @@ public class Menu extends MouseAdapter{
 		}else if(game.gameState == Game.STATE.Instructions){
 			Font fnt = new Font("arial", 1, 50);
 			Font fnt2 = new Font("arial", 1, 20);
+			Font fnt3 = new Font("arial", 1, 40);
 
 			g.setFont(fnt);
 			g.setColor(Color.white);
@@ -128,36 +129,36 @@ public class Menu extends MouseAdapter{
 			g.drawString("Win Condition: Stop all aliens from landing", 25, 200);
 			g.drawString("If aliens make a landing GAME OVER", 25, 250);
 
-			g.setFont(fnt2);
+			g.setFont(fnt3);
 			g.setColor(Color.white);
-			g.drawRect(225, 300, 200, 64);
+			g.drawRect(242, 300, 200, 64);
 			g.drawString("Back", 295, 345);
 		}
 		else if(game.gameState == Game.STATE.GAMEOVER){
 			Font fnt = new Font("arial", 1, 50);
-			Font fnt2 = new Font("arial", 1, 20);
+			Font fnt3 = new Font("arial", 1, 40);
 
 			g.setFont(fnt);
 			g.setColor(Color.white);
 			g.drawString("GAME OVER", 175, 50);
 
-			g.setFont(fnt2);
+			g.setFont(fnt3);
 			g.setColor(Color.white);
-			g.drawRect(225, 300, 200, 64);
+			g.drawRect(242, 300, 200, 64);
 			g.drawString("Back", 295, 345);
 
 		}
 		else if(game.gameState == Game.STATE.WIN){
 			Font fnt = new Font("arial", 1, 50);
-			Font fnt2 = new Font("arial", 1, 20);
+			Font fnt3 = new Font("arial", 1, 40);
 
 			g.setFont(fnt);
 			g.setColor(Color.white);
-			g.drawString("Victory", 175, 50);
+			g.drawString("Victory", 250, 50);
 
-			g.setFont(fnt2);
+			g.setFont(fnt3);
 			g.setColor(Color.white);
-			g.drawRect(225, 300, 200, 64);
+			g.drawRect(242, 300, 200, 64);
 			g.drawString("Back", 295, 345);
 
 		}
