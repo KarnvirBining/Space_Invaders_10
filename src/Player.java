@@ -18,8 +18,6 @@ public class Player extends GameObject {
 
 	public void tick() {
 		x += velX;
-		y += velY;
-		
 		x = Game.Clamp((int)x, 3, Game.WIDTH -39);
 		collision();
 	}

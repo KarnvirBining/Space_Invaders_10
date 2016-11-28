@@ -29,6 +29,7 @@ public class Menu extends MouseAdapter{
 				game.gameState = Game.STATE.Game;
 			    handler.addObject(new Player("sprites/ship.gif",Game.WIDTH/2-32,Game.HEIGHT-70,ID.Player, handler));
 				handler.addObject(new Pong("sprites/ship.gif",0, Game.HEIGHT/2-90, ID.Pong, handler));
+				
 				for(int i = 0; i<12; i++){
 					for(int j = 0; j<3; j++) {
 						handler.addObject(new Alien("sprites/alien.gif",70+(i*40),(j*40),ID.Alien));

@@ -49,6 +49,7 @@ public class KeyInput extends KeyAdapter{
 	private static float dx;
 	private static float dy;
 	private long lastShot = 0;
+	private static int displacement = 5;
 
 	private void try2Shoot() {
 		long wait = 500;
@@ -77,18 +78,19 @@ public class KeyInput extends KeyAdapter{
 		for (int i = 0; i<handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i);
 			dx = tempObject.x;
+			dy = tempObject.y;
 
-			if (tempObject.getId()==ID.Player) {
+			if (tempObject.getId() == ID.Player) {
 				// Key events for the ship
 				if(key == KeyEvent.VK_SPACE) {try2Shoot(); keyDown[0] = true;}
-				if(key == KeyEvent.VK_A) {tempObject.setVelX(-5); dx -= 5; keyDown[1] = true;}
-				if(key == KeyEvent.VK_D) {tempObject.setVelX(5);  dx += 5; keyDown[2] = true;}
+				if(key == KeyEvent.VK_A) {tempObject.setVelX(-5); dx -= displacement; keyDown[1] = true;}
+				if(key == KeyEvent.VK_D) {tempObject.setVelX(5);  dx += displacement; keyDown[2] = true;}
 			}
 
 			if (tempObject.getId() == ID.Pong) {
 				// Key events for Pong paddle
-				if(key == KeyEvent.VK_W) {tempObject.setVelY(5);  dy += 5; keyDown[3] = true;}
-				if(key == KeyEvent.VK_S) {tempObject.setVelY(-5); dy -= 5; keyDown[4] = true;}
+				if(key == KeyEvent.VK_W) {tempObject.setVelY(5);  dy += displacement; keyDown[3] = true;}
+				if(key == KeyEvent.VK_S) {tempObject.setVelY(-5); dy -= displacement; keyDown[4] = true;}
 			}
 		}
 	}
