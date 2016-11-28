@@ -6,9 +6,9 @@ import java.awt.Rectangle;
  */
 public class Alien extends GameObject {
 
-	public Alien(float x, float y, ID id) {
+	public Alien(String ref, float x, float y, ID id) {
 		
-		super(x, y, id);
+		super(ref,x, y, id);
 		velX = 2;
 	}
 	
@@ -17,8 +17,8 @@ public class Alien extends GameObject {
 			x += velX;
 			y += velY;
 			
-			if(x <= 0 || x >= Game.WIDTH-16) velX *= -1;
-			if(x <= 0 || x >= Game.WIDTH-16) y -= -39;
+			if(x <= 0 || x >= Game.WIDTH-38) velX = -velX;
+			if(x <= 0 || x >= Game.WIDTH-38) y -= -39;
 			//Game State Change
 			if(y >= Game.HEIGHT-100){
 				velX = 0;
@@ -27,12 +27,13 @@ public class Alien extends GameObject {
 	}
 
 	public void render(Graphics g) {
-		g.setColor(Color.white);
-		g.fillRect((int)x, (int)y, 16, 16);
+		//g.setColor(Color.white);
+		//g.fillRect((int)x, (int)y, 16, 16);
+		sprite.draw(g,(int) x,(int) y);
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle((int)x,(int)y ,16, 16);
+		return new Rectangle((int)x + 4,(int)y ,34, 28);
 	}
 
 }
