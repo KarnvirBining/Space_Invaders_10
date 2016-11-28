@@ -1,4 +1,3 @@
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 /**
@@ -57,7 +56,7 @@ public class KeyInput extends KeyAdapter{
 		}
 		else {
 			lastShot = System.currentTimeMillis();
-			handler.addObject(new Bullet(dx+8,Game.HEIGHT-75,ID.Bullet, handler));
+			handler.addObject(new Bullet("sprites/bullet.gif",dx+8,Game.HEIGHT-75,ID.Bullet, handler));
 		}
 	}
 	
