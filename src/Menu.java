@@ -25,7 +25,7 @@ public class Menu extends MouseAdapter{
 
 		if(game.gameState == Game.STATE.Menu){
 
-			if(mouseOver(mx, my, 225, 100, 200, 64)){
+			if(mouseOver(mx, my, menuBoxX, menuBoxY, menuBoxHeight, menuBoxWidth)){
 				game.gameState = Game.STATE.Game;
 			    handler.addObject(new Player("sprites/ship.gif",Game.WIDTH/2-32,Game.HEIGHT-70,ID.Player, handler));
 				handler.addObject(new Pong("sprites/ship.gif",0, Game.HEIGHT/2-90, ID.Pong, handler));
@@ -117,7 +117,7 @@ public class Menu extends MouseAdapter{
 	public void render(Graphics g){
 		if(game.gameState == Game.STATE.Menu){
 
-			makeTitle(50, Color.white, "Pong Invaders", 150, 50, g);
+			makeTitle(50, Color.white, "Pong Invaders", 150, (Game.WIDTH*0)+50, g);
 			makeOption(30, Color.white, "Start", 290, 145, 0, g);
 			makeOption(30, Color.white, "Instructions", 240, 245, 100, g);
 			makeOption(30, Color.red, "Quit", 295, 345, 200, g);
@@ -125,7 +125,7 @@ public class Menu extends MouseAdapter{
 		}else if(game.gameState == Game.STATE.Instructions){
 
 
-			makeTitle(50, Color.white, "Instructions", 175, 50, g);
+			makeTitle(50, Color.white, "Instructions", 175, (Game.WIDTH*0)+50, g);
 			
 			makeTitle(20, Color.white, "A, D = Left, Right", 25, 100, g);
 			makeTitle(20, Color.white, "Spacebar = Shoot", 25, 150, g);
@@ -137,12 +137,12 @@ public class Menu extends MouseAdapter{
 		}
 		else if(game.gameState == Game.STATE.GAMEOVER){
 
-			makeTitle(50, Color.red, "Game Over", 175, 50, g);
+			makeTitle(50, Color.red, "Game Over", 175, (Game.WIDTH*0)+50, g);
 			makeOption(30, Color.white, "Back", 295, 345, 200, g);
 		}
 		else if(game.gameState == Game.STATE.WIN){
 
-			makeTitle(50, Color.white, "Victory", 250, 50, g);
+			makeTitle(50, Color.white, "Victory", 250, (Game.WIDTH*0)+50, g);
 			makeOption(40, Color.white, "Back", 295, 345, 200, g);
 
 		}
