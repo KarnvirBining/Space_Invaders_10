@@ -8,7 +8,7 @@ public class Bullet extends GameObject {
 		this.handler = handler;
 
 	}
-	@Override
+
 	public void tick() {
 		//x += velX;
 		y += -5;
@@ -44,7 +44,7 @@ public class Bullet extends GameObject {
 
 		}
 	}
-	@Override
+
 	public Rectangle getBounds() {
 		return new Rectangle((int) x, (int) y ,15, 15);
 	}

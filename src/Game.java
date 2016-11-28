@@ -90,8 +90,7 @@ public class Game extends Canvas implements Runnable  {
 		Instructions, 
 		GAMEOVER,
 		WIN
-		
-	};
+	}
 
 	public STATE gameState = STATE.Menu;
 	
