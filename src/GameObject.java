@@ -1,4 +1,3 @@
-
 import java.awt.Graphics;
 import java.awt.Rectangle;
 /**
@@ -107,8 +106,9 @@ public abstract class GameObject {
 	protected  float x, y;
 	protected ID id;
 	protected float velX, velY;
-	
-	public GameObject(float x, float y, ID id){
+	protected Sprite sprite;
+	public GameObject(String ref,float x, float y, ID id){
+		this.sprite = SpriteStore.get().getSprite(ref);
 		this.x = x;
 		this.y = y;
 		this.id = id;
