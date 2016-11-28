@@ -9,6 +9,10 @@ public class Menu extends MouseAdapter{
 
 	private Game game; 
 	private Handler handler;
+	private int menuBoxX = 225; 
+	private int menuBoxY = 100; 
+	private int menuBoxHeight = 200;
+	private int menuBoxWidth = 64;
 
 	public Menu(Game game, Handler handler){
 		this.game = game; 
@@ -34,12 +38,12 @@ public class Menu extends MouseAdapter{
 			}
 
 			//Instructions menu option
-			if(mouseOver(mx, my, 225, 200, 200, 64)){
+			if(mouseOver(mx, my, menuBoxX, menuBoxY+100, menuBoxHeight, menuBoxWidth)){
 				game.gameState = Game.STATE.Instructions;
 			}
 
 			//Quit menu option
-			if(mouseOver(mx, my, 225,300, 200, 64)){
+			if(mouseOver(mx, my, menuBoxX,menuBoxY+200, menuBoxHeight, menuBoxWidth)){
 				System.exit(1);
 			}
 		}
@@ -68,7 +72,7 @@ public class Menu extends MouseAdapter{
 
 		//Back Button 
 		if(game.gameState == Game.STATE.Instructions || game.gameState == Game.STATE.GAMEOVER || game.gameState == Game.STATE.WIN){
-			if (mouseOver(mx, my, 225, 300, 200, 64)){
+			if (mouseOver(mx, my, menuBoxX, menuBoxY+200, menuBoxHeight, menuBoxWidth)){
 				game.gameState = Game.STATE.Menu;
 				return;
 			}
@@ -91,74 +95,54 @@ public class Menu extends MouseAdapter{
 	public void tick(){
 
 	}
+	
+	private void makeOption(int fntSize, Color colour, String option, int posX, int posY, int dHeight, Graphics g){
+		Font fnt = new Font("arial", 1, fntSize);
+		g.setFont(fnt);
 
+		g.setColor(colour);
+		g.drawRect(menuBoxX, menuBoxY+dHeight, menuBoxHeight, menuBoxWidth);
+		g.drawString(option, posX, posY);
+	}
+
+	private void makeTitle(int fntSize, Color colour, String title, int posX, int posY, Graphics g){
+		Font fnt = new Font("arial", 1, fntSize);
+		g.setFont(fnt);
+		
+		g.setColor(colour);
+		g.drawString(title, posX, posY);
+	}
+	
 	public void render(Graphics g){
 		if(game.gameState == Game.STATE.Menu){
-			Font fnt = new Font("arial", 1, 50);
-			Font fnt2 = new Font("arial", 1, 30);
 
-			g.setFont(fnt);
-			g.setColor(Color.white);
-			g.drawString("Pong Invaders", 150, 50);
+			makeTitle(50, Color.white, "Pong Invaders", 150, 50, g);
+			makeOption(30, Color.white, "Start", 290, 145, 0, g);
+			makeOption(30, Color.white, "Instructions", 240, 245, 100, g);
+			makeOption(30, Color.red, "Quit", 295, 345, 200, g);
 
-			g.setFont(fnt2);
-			g.setColor(Color.white);
-			g.drawRect(225, 100, 200, 64);
-			g.drawString("Start", 290, 145);
-
-			g.setColor(Color.white);
-			g.drawRect(225, 200, 200, 64);
-			g.drawString("Instructions", 240, 245);
-
-			g.setColor(Color.red);
-			g.drawRect(225, 300, 200, 64);
-			g.drawString("Quit", 295, 345);
 		}else if(game.gameState == Game.STATE.Instructions){
-			Font fnt = new Font("arial", 1, 50);
-			Font fnt2 = new Font("arial", 1, 20);
-			Font fnt3 = new Font("arial", 1, 40);
 
-			g.setFont(fnt);
-			g.setColor(Color.white);
-			g.drawString("Instructions", 175, 50);
 
-			g.setFont(fnt2);
-			g.drawString("A, D = Left, Right", 25, 100);
-			g.drawString("Spacebar = Shoot", 25, 150);
-			g.drawString("Win Condition: Stop all aliens from landing", 25, 200);
-			g.drawString("If aliens make a landing GAME OVER", 25, 250);
+			makeTitle(50, Color.white, "Instructions", 175, 50, g);
+			
+			makeTitle(20, Color.white, "A, D = Left, Right", 25, 100, g);
+			makeTitle(20, Color.white, "Spacebar = Shoot", 25, 150, g);
+			makeTitle(20, Color.white, "Win Condition: Stop all aliens from landing", 25, 200, g);
+			makeTitle(20, Color.white, "If aliens make a landing GAME OVER", 25, 250, g);
+			
+			makeOption(30, Color.white, "Back", 295, 345, 200, g);
 
-			g.setFont(fnt3);
-			g.setColor(Color.white);
-			g.drawRect(242, 300, 200, 64);
-			g.drawString("Back", 295, 345);
 		}
 		else if(game.gameState == Game.STATE.GAMEOVER){
-			Font fnt = new Font("arial", 1, 50);
-			Font fnt3 = new Font("arial", 1, 40);
 
-			g.setFont(fnt);
-			g.setColor(Color.white);
-			g.drawString("GAME OVER", 175, 50);
-
-			g.setFont(fnt3);
-			g.setColor(Color.white);
-			g.drawRect(242, 300, 200, 64);
-			g.drawString("Back", 295, 345);
-
+			makeTitle(50, Color.red, "Game Over", 175, 50, g);
+			makeOption(30, Color.white, "Back", 295, 345, 200, g);
 		}
 		else if(game.gameState == Game.STATE.WIN){
-			Font fnt = new Font("arial", 1, 50);
-			Font fnt3 = new Font("arial", 1, 40);
 
-			g.setFont(fnt);
-			g.setColor(Color.white);
-			g.drawString("Victory", 250, 50);
-
-			g.setFont(fnt3);
-			g.setColor(Color.white);
-			g.drawRect(242, 300, 200, 64);
-			g.drawString("Back", 295, 345);
+			makeTitle(50, Color.white, "Victory", 250, 50, g);
+			makeOption(40, Color.white, "Back", 295, 345, 200, g);
 
 		}
 	}
