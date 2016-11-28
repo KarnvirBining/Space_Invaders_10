@@ -6,8 +6,8 @@ public class Pong extends GameObject {
 
 	Handler handler;
 
-	public Pong(float x, float y, ID id, Handler handler) {
-		super(x, y, id);
+	public Pong(String ref,float x, float y, ID id, Handler handler) {
+		super(ref,x, y, id);
 		this.handler = handler;
 	}
 

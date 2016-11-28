@@ -11,8 +11,8 @@ public class Player extends GameObject {
 
 	Handler handler;
 	
-	public Player(float x, float y, ID id, Handler handler) {
-		super(x, y, id);
+	public Player(String ref,float x, float y, ID id, Handler handler) {
+		super(ref,x, y, id);
 		this.handler = handler;
 	}
 
@@ -45,9 +45,9 @@ public class Player extends GameObject {
 //		g.setColor(Color.green);
 //		g2d.draw(getBounds());
 		
-		g.setColor(Color.red);
-		g.fillRect((int)x, (int)y, 32, 32);
-		
+//		g.setColor(Color.red);
+//		g.fillRect((int)x, (int)y, 32, 32);
+		sprite.draw(g,(int) x,(int) y);
 	}
 
 	public Rectangle getBounds() {
