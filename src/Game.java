@@ -187,7 +187,7 @@ public class Game extends Canvas implements Runnable  {
 		g.fillRect(0,0,WIDTH,HEIGHT);
 		
 		
-		handler.reneder(g);
+		handler.render(g);
 		if(gameState == STATE.Game){
 			//hud.render(g);
 		}else if(gameState == STATE.Menu || gameState == STATE.Instructions || gameState == STATE.GAMEOVER || gameState == STATE.WIN){

@@ -54,14 +54,14 @@ public class Menu extends MouseAdapter{
 				}
 			}
 			if (counter == 0){
-				handler.clearEnemys();
+				handler.clearEnemy();
 				game.gameState = Game.STATE.WIN;
 			}
 		}
 
 		if(game.gameState == Game.STATE.Game){
 			if(HUD.HEALTH != 100){
-				handler.clearEnemys();
+				handler.clearEnemy();
 				game.gameState = Game.STATE.GAMEOVER;
 				HUD.HEALTH = 100;
 			}

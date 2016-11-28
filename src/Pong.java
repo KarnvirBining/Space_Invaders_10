@@ -13,6 +13,6 @@ public class Pong extends GameObject {
 
 	public void render(Graphics g) {
 		g.setColor(Color.blue);
-		g.fillRect((int)x, (int)y, , 16);
+		g.fillRect((int)x, (int)y, 20, 70);
 	}
 }*/
