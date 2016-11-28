@@ -3,12 +3,12 @@ public class Bullet extends GameObject {
 	
 	Handler handler;
 	
-	public Bullet(float x, float y, ID id, Handler handler) {
-		super(x, y, id);
+	public Bullet(String ref,float x, float y, ID id, Handler handler) {
+		super(ref,x, y, id);
 		this.handler = handler;
 
 	}
-
+	@Override
 	public void tick() {
 		//x += velX;
 		y += -5;
@@ -24,9 +24,8 @@ public class Bullet extends GameObject {
 //		g.setColor(Color.green);
 //		g2d.draw(getBounds());
 		
-		
-		g.setColor(Color.yellow);
-		g.fillRect((int)x, (int)y, 15, 15);
+
+		sprite.draw(g,(int) x,(int) y);
 	}
 	
 	private void collision(){
@@ -44,8 +43,8 @@ public class Bullet extends GameObject {
 
 		}
 	}
-
+	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int) x, (int) y ,15, 15);
+		return new Rectangle((int) x +1, (int) y ,10, 17);
 	}
 }
