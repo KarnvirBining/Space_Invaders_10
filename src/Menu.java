@@ -23,8 +23,8 @@ public class Menu extends MouseAdapter{
 
 			if(mouseOver(mx, my, 225, 100, 200, 64)){
 				game.gameState = Game.STATE.Game;
-				handler.addObject(new Player(Game.WIDTH/2-32,Game.HEIGHT-75,ID.Player, handler));
-
+				handler.addObject(new Player(Game.WIDTH/2-32,Game.HEIGHT-75, ID.Player, handler));
+				handler.addObject(new Pong(5, Game.HEIGHT/2-70, ID.Pong, handler));
 				for(int i = 0; i<12; i++){
 					//					handler.addObject(new Alien(70+(i*30),0,ID.Alien));
 					for(int j = 0; j<3; j++) {

@@ -52,7 +52,7 @@ public class Player extends GameObject {
 
 	public Rectangle getBounds() {
 		return new Rectangle(0, Game.HEIGHT-75 ,Game.WIDTH, 32);
-	}
+}
 
 
 }

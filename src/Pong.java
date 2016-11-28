@@ -25,7 +25,7 @@ public class Pong extends GameObject {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle((int) x, (int) y ,20, 70);
+		return new Rectangle((int) x, (int) y , 20, 70);
 	}
 
 }

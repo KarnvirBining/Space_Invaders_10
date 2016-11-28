@@ -180,7 +180,7 @@ public class Game extends Canvas implements Runnable  {
 			return;
 		}
 		
-		Graphics g  = bs.getDrawGraphics();
+		Graphics g = bs.getDrawGraphics();
 		
 		g.setColor(Color.black);
 		g.fillRect(0,0,WIDTH,HEIGHT);

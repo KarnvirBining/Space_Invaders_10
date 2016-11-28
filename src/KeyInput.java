@@ -62,7 +62,7 @@ public class KeyInput extends KeyAdapter{
 	}
 	
 	public KeyInput(Handler handler){
-		this.handler =handler;
+		this.handler = handler;
 		keyDown[0] = false;
 		keyDown[1] = false;
 		keyDown[2] = false;
