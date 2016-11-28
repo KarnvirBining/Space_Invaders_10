@@ -15,4 +15,4 @@ public class Pong extends GameObject {
 		g.setColor(Color.blue);
 		g.fillRect((int)x, (int)y, 20, 70);
 	}
-}*/
+}*/q

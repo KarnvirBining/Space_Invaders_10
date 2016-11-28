@@ -16,7 +16,6 @@ public class Player extends GameObject {
 		this.handler = handler;
 	}
 
-	@Override
 	public void tick() {
 		x += velX;
 		y += velY;
@@ -40,7 +39,6 @@ public class Player extends GameObject {
 		}
 	}
 
-	@Override
 	public void render(Graphics g) {
 		
 //		Graphics2D g2d =(Graphics2D) g;
@@ -52,7 +50,6 @@ public class Player extends GameObject {
 		
 	}
 
-	@Override
 	public Rectangle getBounds() {
 		return new Rectangle(0, Game.HEIGHT-75 ,Game.WIDTH, 32);
 	}
