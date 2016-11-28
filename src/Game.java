@@ -75,7 +75,7 @@ public class Game extends Canvas implements Runnable  {
 
 	private static final long serialVersionUID = -1930825029999864569L;
 	
-	public static final int WIDTH = 640, HEIGHT = WIDTH / 12*9;
+	public static final int WIDTH = 1280, HEIGHT = WIDTH / 12*9;
 	
 	private Thread thread;
 	private boolean running = false;
@@ -90,7 +90,8 @@ public class Game extends Canvas implements Runnable  {
 		Instructions, 
 		GAMEOVER,
 		WIN
-	}
+		
+	};
 
 	public STATE gameState = STATE.Menu;
 	
@@ -104,13 +105,7 @@ public class Game extends Canvas implements Runnable  {
 		
 		hud = new HUD();
 
-		if(gameState == STATE.Game){
-
-			handler.addObject(new Player(WIDTH/2-32,HEIGHT-75,ID.Player, handler));
-			for(int i = 0; i<7; i++){
-				handler.addObject(new Alien(70+(i*30),100,ID.Alien));
-			}
-		}
+		
 	}
 
 
@@ -180,16 +175,14 @@ public class Game extends Canvas implements Runnable  {
 			return;
 		}
 		
-		Graphics g = bs.getDrawGraphics();
+		Graphics g  = bs.getDrawGraphics();
 		
 		g.setColor(Color.black);
 		g.fillRect(0,0,WIDTH,HEIGHT);
 		
 		
-		handler.render(g);
-		if(gameState == STATE.Game){
-			//hud.render(g);
-		}else if(gameState == STATE.Menu || gameState == STATE.Instructions || gameState == STATE.GAMEOVER || gameState == STATE.WIN){
+		handler.reneder(g);
+		if(gameState == STATE.Menu || gameState == STATE.Instructions || gameState == STATE.GAMEOVER || gameState == STATE.WIN){
 			menu.render(g);
 		}
 
