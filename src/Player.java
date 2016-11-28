@@ -14,14 +14,12 @@ public class Player extends GameObject {
 	public Player(float x, float y, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
-
-		
 	}
 
 	@Override
 	public void tick() {
-		x+=velX;
-		y +=velY;
+		x += velX;
+		y += velY;
 		
 		x = Game.Clamp((int)x, 3, Game.WIDTH -39);
 		collision();
