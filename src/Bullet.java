@@ -1,8 +1,8 @@
 import java.awt.*;
 public class Bullet extends GameObject {
-	
+
 	Handler handler;
-	
+
 	public Bullet(String ref,float x, float y, ID id, Handler handler) {
 		super(ref,x, y, id);
 		this.handler = handler;
@@ -17,21 +17,15 @@ public class Bullet extends GameObject {
 		}
 		collision();
 	}
-	
-	public void render(Graphics g) {
-		
-//		Graphics2D g2d =(Graphics2D) g;
-//		g.setColor(Color.green);
-//		g2d.draw(getBounds());
-		
 
+	public void render(Graphics g) {
 		sprite.draw(g,(int) x,(int) y);
 	}
-	
+
 	private void collision(){
 		for(int i= 0; i<handler.object.size(); i++){
 			GameObject tempObject = handler.object.get(i);
-			
+
 			if(tempObject.getId() == ID.Alien){//tempObject is BasicEnemy
 				//collision code
 				if(getBounds().intersects(tempObject.getBounds())){
