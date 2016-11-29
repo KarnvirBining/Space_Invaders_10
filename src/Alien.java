@@ -19,7 +19,12 @@ public class Alien extends GameObject {
 		y += velY;
 
 		// If an alien reaches the sides of the window, then invert velX and shift y down
-		collision();
+		if(x >= Game.WIDTH-38) {
+			collisionR();
+		}
+		if(x <= 0) {
+			collisionL();
+		}
 
 		// Game State Change
 		if(y >= Game.HEIGHT-100){
@@ -28,14 +33,22 @@ public class Alien extends GameObject {
 		}
 	}
 
-	private void collision() {
-		if(x <= 0 || x >= Game.WIDTH-38) {
+	private void collisionR() {
 			for(int i = 0; i < handler.object.size(); i++) {
 				GameObject tempObject = handler.object.get(i);
 				if(tempObject.getId() == ID.Alien) {
-					velX = -velX;
-					y -= -39;
+					tempObject.velX = -velX;
+					tempObject.y -= -9;
 				}
+			}
+		}
+	
+	private void collisionL() {
+		for(int i = handler.object.size()-1; i > 0; i--) {
+			GameObject tempObject = handler.object.get(i);
+			if(tempObject.getId() == ID.Alien) {
+				tempObject.velX = -velX;
+				tempObject.y -= -9;
 			}
 		}
 	}
