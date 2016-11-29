@@ -46,7 +46,7 @@ public class Ball extends GameObject {
 
 				if(getBounds().intersects(tempObject.getBounds())) {
 
-					i
+					
 				}
 			}
 		}
