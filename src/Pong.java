@@ -13,7 +13,7 @@ public class Pong extends GameObject {
 
 	public void tick() {
 		y -= velY; // Negative velY because the top of the screen is 0
-		y = Game.Clamp((int)y, 0, Game.HEIGHT-90);
+		y = Game.Clamp((int)y, 0, Game.HEIGHT-119);
 	}
 
 	public void render(Graphics g) {

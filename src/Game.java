@@ -102,10 +102,9 @@ public class Game extends Canvas implements Runnable  {
 		this.addKeyListener(new KeyInput(handler));
 		this.addMouseListener(menu);
 		new Window(WIDTH,HEIGHT,"Pong Invaders",this);
-		
+
 		hud = new HUD();
 
-		
 	}
 
 
@@ -206,7 +205,5 @@ public class Game extends Canvas implements Runnable  {
 	public static void main (String args[]){
 		new Game();
 	}
-	
-	
 }
 
