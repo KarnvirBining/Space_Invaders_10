@@ -6,9 +6,8 @@ public class Bullet extends GameObject {
 	public Bullet(String ref,float x, float y, ID id, Handler handler) {
 		super(ref,x, y, id);
 		this.handler = handler;
-
 	}
-	@Override
+
 	public void tick() {
 		//x += velX;
 		y += -5;
@@ -37,7 +36,6 @@ public class Bullet extends GameObject {
 		}
 	}
 
-	@Override
 	public Rectangle getBounds() {
 		return new Rectangle((int) x +1, (int) y ,10, 17);
 	}
