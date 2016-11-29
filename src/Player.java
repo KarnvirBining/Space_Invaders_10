@@ -18,7 +18,7 @@ public class Player extends GameObject {
 
 	public void tick() {
 		x += velX;
-		x = Game.Clamp((int)x, 3, Game.WIDTH -39);
+		x = Game.Clamp((int)x, 3, Game.WIDTH-39);
 		collision();
 	}
 	

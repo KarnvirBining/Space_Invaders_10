@@ -13,7 +13,7 @@ public class Pong extends GameObject {
 
 	public void tick() {
 		y -= velY; // Negative velY because the top of the screen is 0
-		y = Game.Clamp((int)y, 0, Game.HEIGHT-119);
+		y = Game.Clamp((int)y, 0, Game.HEIGHT-169);
 	}
 
 	public void render(Graphics g) {
@@ -26,7 +26,7 @@ public class Pong extends GameObject {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle((int) x, (int) y , 12, 90);
+		return new Rectangle((int)x, (int)y , 12, 90);
 	}
 
 }
