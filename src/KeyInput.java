@@ -83,14 +83,14 @@ public class KeyInput extends KeyAdapter{
 			if (tempObject.getId() == ID.Player) {
 				// Key events for the ship
 				if(key == KeyEvent.VK_SPACE) {try2Shoot(); keyDown[0] = true;}
-				if(key == KeyEvent.VK_A) {tempObject.setVelX(-5); dx -= displacement; keyDown[1] = true;}
-				if(key == KeyEvent.VK_D) {tempObject.setVelX(5);  dx += displacement; keyDown[2] = true;}
+				if(key == KeyEvent.VK_A) {tempObject.setVelX(-displacement); dx -= displacement; keyDown[1] = true;}
+				if(key == KeyEvent.VK_D) {tempObject.setVelX(displacement);  dx += displacement; keyDown[2] = true;}
 			}
 
 			if (tempObject.getId() == ID.Pong) {
 				// Key events for Pong paddle
-				if(key == KeyEvent.VK_W) {tempObject.setVelY(5);  dy += displacement; keyDown[3] = true;}
-				if(key == KeyEvent.VK_S) {tempObject.setVelY(-5); dy -= displacement; keyDown[4] = true;}
+				if(key == KeyEvent.VK_W) {tempObject.setVelY(displacement);  dy += displacement; keyDown[3] = true;}
+				if(key == KeyEvent.VK_S) {tempObject.setVelY(-displacement); dy -= displacement; keyDown[4] = true;}
 			}
 		}
 	}
