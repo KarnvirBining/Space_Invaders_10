@@ -24,6 +24,7 @@ public class Alien extends GameObject {
 				velX = -velX;
 				y -= -39;
 			}
+
 			// Game State Change
 			if(y >= Game.HEIGHT-100){
 				velX = 0;
@@ -32,8 +33,6 @@ public class Alien extends GameObject {
 	}
 
 	public void render(Graphics g) {
-		//g.setColor(Color.white);
-		//g.fillRect((int)x, (int)y, 16, 16);
 		sprite.draw(g,(int) x,(int) y);
 	}
 

@@ -20,7 +20,7 @@ public class Bullet extends GameObject {
 	}
 
 	public void render(Graphics g) {
-		sprite.draw(g,(int) x,(int) y);
+		sprite.draw(g,(int)x,(int)y);
 	}
 
 	private void collision() {
