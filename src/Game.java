@@ -168,6 +168,11 @@ public class Game extends Canvas implements Runnable  {
 					gameState = Game.STATE.GAMEOVER;
 					HUD.HEALTH = 100;
 				}
+
+				if (Bullet.alienKillCount == 36){
+					handler.clearEnemy();
+					gameState = Game.STATE.WIN;
+				}
 			}
 		}else if(gameState == STATE.Menu){
 			menu.tick(); 

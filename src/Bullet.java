@@ -2,7 +2,8 @@ import java.awt.*;
 public class Bullet extends GameObject {
 
 	Handler handler;
-
+	public static int alienKillCount = 0;
+	
 	public Bullet(String ref,float x, float y, ID id, Handler handler) {
 		super(ref,x, y, id);
 		this.handler = handler;
@@ -31,6 +32,7 @@ public class Bullet extends GameObject {
 
 					handler.removeObject(tempObject);
 					handler.removeObject(this);
+					alienKillCount++;
 				}
 			}
 		}

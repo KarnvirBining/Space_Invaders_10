@@ -48,19 +48,19 @@ public class Menu extends MouseAdapter{
 			}
 		}
 
-		if(game.gameState == Game.STATE.Game){
-			int counter = 0;
-			for (int i = 0; i<handler.object.size(); i++){
-				GameObject tempObject = handler.object.get(i);
-				if (tempObject.getId() == ID.Alien) {
-					counter++;
-				}
-			}
-			if (counter == 0){
-				handler.clearEnemy();
-				game.gameState = Game.STATE.WIN;
-			}
-		}
+//		if(game.gameState == Game.STATE.Game){
+//			int counter = 0;
+//			for (int i = 0; i<handler.object.size(); i++){
+//				GameObject tempObject = handler.object.get(i);
+//				if (tempObject.getId() == ID.Alien) {
+//					counter++;
+//				}
+//			}
+//			if (counter == 0){
+//				handler.clearEnemy();
+//				game.gameState = Game.STATE.WIN;
+//			}
+//		}
 
 		//Back Button 
 		if(game.gameState == Game.STATE.Instructions || game.gameState == Game.STATE.GAMEOVER || game.gameState == Game.STATE.WIN){
@@ -134,7 +134,7 @@ public class Menu extends MouseAdapter{
 		else if(game.gameState == Game.STATE.WIN){
 
 			makeTitle(50, Color.white, "Victory", 250, (Game.WIDTH*0)+50, g);
-			makeOption(40, Color.white, "Back", 295, 345, 200, g);
+			makeOption(30, Color.white, "Back", 295, 345, 200, g);
 
 		}
 	}
