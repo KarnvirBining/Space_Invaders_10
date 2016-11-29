@@ -17,12 +17,14 @@ public class Alien extends GameObject {
 			x += velX;
 			y += velY;
 			
-			if(x <= 0 || x >= Game.WIDTH-38) velX = -velX;
-			if(x <= 0 || x >= Game.WIDTH-38) y -= -39;
+			if(x <= 0 || x >= Game.WIDTH-38) {
+				velX = -velX;
+				y -= -39;
+			}
 			//Game State Change
 			if(y >= Game.HEIGHT-100){
 				velX = 0;
-				x = 0+32;
+				x = 32;
 			}
 	}
 

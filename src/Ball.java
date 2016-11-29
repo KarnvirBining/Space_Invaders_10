@@ -36,6 +36,7 @@ public class Ball extends GameObject {
 
 					handler.removeObject(tempObject);
 					handler.removeObject(this);
+					Bullet.alienKillCount++;
 					// Change x-velocity of the ball to go in the opposite direction
 					velX = -velX;
 				}
@@ -46,7 +47,7 @@ public class Ball extends GameObject {
 
 				if(getBounds().intersects(tempObject.getBounds())) {
 
-					
+
 				}
 			}
 		}
