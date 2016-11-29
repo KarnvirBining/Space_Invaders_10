@@ -53,7 +53,7 @@ public class Alien extends GameObject {
 			}
 		}
 		// Band-aid fix for first alien object not updating properly on collision, no obvious way to fix as of now.
-		GameObject tempObject = handler.object.get(2);
+		GameObject tempObject = handler.object.get(4);
 		tempObject.x += 4;
 	}
 
