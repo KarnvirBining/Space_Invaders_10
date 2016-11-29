@@ -11,7 +11,8 @@ public class Ball extends GameObject {
 		this.handler = handler;
 		setY(Game.HEIGHT-100);
 		velX = -2;
-		velY = 2;
+		velY =2;
+		Game.Clamp((int)velY, -10, 10);
 	}
 
 	public void tick() {
@@ -61,40 +62,58 @@ public class Ball extends GameObject {
 			// If tempObject is of ID.Pong, and if the pong paddle intersects the ball, the ball is deflected
 			if(tempObject.getId() == ID.Pong) {
 
-				if(getBounds().intersects(tempObject.getBounds())) {
-
-					velX = -velX;
-					velY = -velY;
+				if(x<=0){
+					if(y > tempObject.y && y < (tempObject.y+90)){
+						velX = -velX;
+						float dy = y - (tempObject.y + 45);
+						velY = (float) (dy *0.2);
+					}
+					
+					
 				}
-				if(getBounds().intersects(((Pong) tempObject).getBounds2())) {
-
-					velX = -velX;
-					velY = (float) (-velY*1.5);
-				}
-				if(getBounds().intersects(((Pong) tempObject).getBounds3())) {
-
-					velX = -velX;
-					velY = (float) (-velY*1.5);
-				}
+				
+				
+//				if(getBounds().intersects(tempObject.getBounds())) {
+//
+//					velX = -velX;
+//					velY = -velY;
+//				}
+//				if(getBounds().intersects(((Pong) tempObject).getBounds2())) {
+//
+//					velX = -velX;
+//					velY = (float) (-velY*1.5);
+//				}
+//				if(getBounds().intersects(((Pong) tempObject).getBounds3())) {
+//
+//					velX = -velX;
+//					velY = (float) (-velY*1.5);
+//				}
 			}
 			if(tempObject.getId() == ID.AI) {
 
-				if(getBounds().intersects(tempObject.getBounds())) {
-
-					velX = -velX;
-					velY = -velY;
-				}
-				if(getBounds().intersects(((AI) tempObject).getBounds2())) {
-
-					velX = -velX;
-					velY = (float) (-velY*1.5);
-				}
-				if(getBounds().intersects(((AI) tempObject).getBounds3())) {
-
-					velX = -velX;
-					velY = (float) (-velY*1.5);
-				}
+				if(x > Game.WIDTH-19){
+					if(y > tempObject.y && y < (tempObject.y+90)){
+						velX = -velX;
+						float dy = y - (tempObject.y + 45);
+						velY = (float) (dy *0.2);
+					}
+//				if(getBounds().intersects(tempObject.getBounds())) {
+//
+//					velX = -velX;
+//					velY = -velY;
+//				}
+//				if(getBounds().intersects(((AI) tempObject).getBounds2())) {
+//
+//					velX = -velX;
+//					velY = (float) (-velY*1.5);
+//				}
+//				if(getBounds().intersects(((AI) tempObject).getBounds3())) {
+//
+//					velX = -velX;
+//					velY = (float) (-velY*1.5);
+//				}
 			}
+		}
 		}
 	}
 
