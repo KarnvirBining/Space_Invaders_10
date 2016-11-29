@@ -49,7 +49,7 @@ public class KeyInput extends KeyAdapter{
 	private static float dx;
 	private static float dy;
 	private long lastShot = 0;
-	private static int displacement = 5;
+	private static int displacement = 8;
 
 	private void try2Shoot() {
 		long wait = 500;
@@ -122,4 +122,3 @@ public class KeyInput extends KeyAdapter{
 		}
 	}
 }
-
