@@ -41,6 +41,7 @@ public class Ball extends GameObject {
 				if(getBounds().intersects(tempObject.getBounds())) {
 
 					handler.removeObject(tempObject);
+					Bullet.alienKillCount++;
 					
 					// Change x-velocity of the ball to go in the opposite direction
 					velY = -velY;
