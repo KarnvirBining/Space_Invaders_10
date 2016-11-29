@@ -2,21 +2,27 @@ import java.awt.*;
 public class Ball extends GameObject {
 
 	Handler handler;
+	Pong pong;
 
 	public Ball(String ref,float x, float y, ID id, Handler handler) {
 		super(ref,x, y, id);
 		this.handler = handler;
-		velX = 5;
-		velY = 0;
+		setY(Game.HEIGHT-100);
+		velX = -2;
+		velY = 2;
 	}
 
 	public void tick() {
 		x += velX;
 		y -= velY; // Negative velY because the top of the screen is 0
-		y = Game.Clamp((int)y, 0, Game.HEIGHT-169);
-		if((x <= -20) || (x >= Game.WIDTH+20)) {
-			handler.removeObject(this);
+		if(y < 0||y > Game.HEIGHT -75){
+			velY = -velY;
 		}
+//		if((x >= Game.WIDTH-20)) {
+//			velX = -velX;
+//			velY = -velY;
+//		}
+		
 		collision();
 	}
 
@@ -35,10 +41,9 @@ public class Ball extends GameObject {
 				if(getBounds().intersects(tempObject.getBounds())) {
 
 					handler.removeObject(tempObject);
-					handler.removeObject(this);
-					Bullet.alienKillCount++;
+					
 					// Change x-velocity of the ball to go in the opposite direction
-					velX = -velX;
+					velY = -velY;
 				}
 			}
 
@@ -47,7 +52,36 @@ public class Ball extends GameObject {
 
 				if(getBounds().intersects(tempObject.getBounds())) {
 
+					velX = -velX;
+					velY = -velY;
+				}
+				if(getBounds().intersects(((Pong) tempObject).getBounds2())) {
 
+					velX = -velX;
+					velY = (float) (-velY*1.5);
+				}
+				if(getBounds().intersects(((Pong) tempObject).getBounds3())) {
+
+					velX = -velX;
+					velY = (float) (-velY*1.5);
+				}
+			}
+			if(tempObject.getId() == ID.AI) {
+
+				if(getBounds().intersects(tempObject.getBounds())) {
+
+					velX = -velX;
+					velY = -velY;
+				}
+				if(getBounds().intersects(((AI) tempObject).getBounds2())) {
+
+					velX = -velX;
+					velY = (float) (-velY*1.5);
+				}
+				if(getBounds().intersects(((AI) tempObject).getBounds3())) {
+
+					velX = -velX;
+					velY = (float) (-velY*1.5);
 				}
 			}
 		}
