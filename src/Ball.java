@@ -16,11 +16,22 @@ public class Ball extends GameObject {
 
 	public void render(Graphics g) {
 		g.setColor(Color.cyan);
-		g.fillOval((int)x, (int)y, 15, 15);
+		g.fillRect((int)x, (int)y, 15, 15);
 	}
 
 	private void collision() {
+		for(int i= 0; i<handler.object.size(); i++) {
+			GameObject tempObject = handler.object.get(i);
+			// If tempObject is of ID.Alien, and if the alien intersects the ball, it is deleted
+			if(tempObject.getId() == ID.Alien) {
 
+				if(getBounds().intersects(tempObject.getBounds())) {
+
+					handler.removeObject(tempObject);
+					handler.removeObject(this);
+				}
+			}
+		}
 	}
 
 	public Rectangle getBounds() {

@@ -12,7 +12,7 @@ public class Bullet extends GameObject {
 	public void tick() {
 		//x += velX;
 		y += -5;
-		if(y <= 20){
+		if(y <= 20) {
 			handler.removeObject(this);
 		}
 		collision();
@@ -25,15 +25,15 @@ public class Bullet extends GameObject {
 	private void collision() {
 		for(int i= 0; i<handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i);
-			// If tempObject is of ID.Alien, and if the alien intersects something it is deleted
+			// If tempObject is of ID.Alien, and if the alien intersects the bullet, it is deleted
 			if(tempObject.getId() == ID.Alien) {
 
-				if(getBounds().intersects(tempObject.getBounds())){
+				if(getBounds().intersects(tempObject.getBounds())) {
 
 					handler.removeObject(tempObject);
 					handler.removeObject(this);
-					}
 				}
+			}
 		}
 	}
 
