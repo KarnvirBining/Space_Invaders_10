@@ -168,6 +168,7 @@ public class Game extends Canvas implements Runnable  {
 					gameState = Game.STATE.GAMEOVER;
 					Ball.PlayerDefeat = false;
 					HUD.HEALTH = 100;
+					Bullet.alienKillCount = 0;
 				}
 
 				if ((Bullet.alienKillCount == 36) && (Ball.AIDefeat == true)){

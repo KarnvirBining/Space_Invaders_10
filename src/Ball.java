@@ -24,13 +24,13 @@ public class Ball extends GameObject {
 
 		// If the ball passes the player pong paddle, enter game loss
 		if(x < -20) {
-			handler.removeObject(this);
+			//handler.removeObject(this);
 			PlayerDefeat = true;
 		}
 
 		// If the ball passes the AI pong paddle, enable potential to win
 		if(x > Game.WIDTH) {
-			handler.removeObject(this);
+			//handler.removeObject(this);
 			AIDefeat = true;
 		}
 
