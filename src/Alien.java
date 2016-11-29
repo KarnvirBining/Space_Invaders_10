@@ -19,11 +19,11 @@ public class Alien extends GameObject {
 		y += velY;
 
 		// If an alien reaches the sides of the window, then invert velX and shift y down
-		if(x >= Game.WIDTH-42) {
+		if(x >= Game.WIDTH-60) {
 			collisionR();
 		}
 
-		if(x <= -8) {
+		if(x <= 10) {
 			collisionL();
 		}
 

@@ -163,15 +163,17 @@ public class Game extends Canvas implements Runnable  {
 		if(gameState == STATE.Game){
 			hud.tick();
 			if(gameState == Game.STATE.Game){
-				if(HUD.HEALTH != 100 || Ball.playerDefeat == true){
+				if(HUD.HEALTH != 100 || Ball.PlayerDefeat == true){
 					handler.clearEnemy();
 					gameState = Game.STATE.GAMEOVER;
+					Ball.PlayerDefeat = false;
 					HUD.HEALTH = 100;
 				}
 
 				if ((Bullet.alienKillCount == 36) && (Ball.AIDefeat == true)){
 					handler.clearEnemy();
 					gameState = Game.STATE.WIN;
+					Ball.AIDefeat = false;
 					Bullet.alienKillCount = 0;
 				}
 			}

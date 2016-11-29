@@ -4,7 +4,7 @@ public class Ball extends GameObject {
 	Handler handler;
 
 	public static boolean AIDefeat = false;
-	public static boolean playerDefeat = false;
+	public static boolean PlayerDefeat = false;
 
 	public Ball(String ref,float x, float y, ID id, Handler handler) {
 		super(ref,x, y, id);
@@ -24,7 +24,7 @@ public class Ball extends GameObject {
 		// If the ball passes the player pong paddle, enter game loss
 		if(x < -20) {
 			handler.removeObject(this);
-			playerDefeat = true;
+			PlayerDefeat = true;
 		}
 
 		// If the ball passes the AI pong paddle, enable potential to win
