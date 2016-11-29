@@ -74,27 +74,27 @@ import java.awt.image.BufferStrategy;
 public class Game extends Canvas implements Runnable  {
 
 	private static final long serialVersionUID = -1930825029999864569L;
-	
+
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12*9;
-	
+
 	private Thread thread;
 	private boolean running = false;
-	
+
 	private Handler handler;
 	private HUD hud;
 	private Menu menu;
-	
+
 	public enum STATE {
 		Menu,
 		Game,
 		Instructions, 
 		GAMEOVER,
 		WIN
-		
+
 	};
 
 	public STATE gameState = STATE.Menu;
-	
+
 
 	public Game(){
 		handler = new Handler();
@@ -110,23 +110,23 @@ public class Game extends Canvas implements Runnable  {
 
 
 	public synchronized void start(){
-		
+
 		thread = new Thread(this);
 		thread.start();
 		running = true;
 	}
-	
+
 	public synchronized void stop(){
 		try{
 			thread.join();
 			running = false;
-			
-			
+
+
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void run(){
 		this.requestFocus();
 		long lastTime = System.nanoTime();
@@ -146,8 +146,8 @@ public class Game extends Canvas implements Runnable  {
 			if(running)
 				render();
 			frames++;
-			
-			
+
+
 			if(System.currentTimeMillis() - timer> 1000){
 				timer+= 1000;
 				System.out.println ("FPS: " +frames);
@@ -155,37 +155,44 @@ public class Game extends Canvas implements Runnable  {
 			}
 		}
 		stop();
-		
+
 	}
-	
+
 	private void tick(){
 		handler.tick();
 		if(gameState == STATE.Game){
 			hud.tick();
+			if(gameState == Game.STATE.Game){
+				if(HUD.HEALTH != 100){
+					handler.clearEnemy();
+					gameState = Game.STATE.GAMEOVER;
+					HUD.HEALTH = 100;
+				}
+			}
 		}else if(gameState == STATE.Menu){
 			menu.tick(); 
 		}
 	}
-	
+
 	private void render(){
 		BufferStrategy bs = this.getBufferStrategy();
 		if (bs == null){
 			this.createBufferStrategy(3);
 			return;
 		}
-		
+
 		Graphics g  = bs.getDrawGraphics();
-		
+
 		g.setColor(Color.black);
 		g.fillRect(0,0,WIDTH,HEIGHT);
-		
-		
+
+
 		handler.render(g);
 		if(gameState == STATE.Menu || gameState == STATE.Instructions || gameState == STATE.GAMEOVER || gameState == STATE.WIN){
 			menu.render(g);
 		}
 
-		
+
 		g.dispose();
 		bs.show();
 	}
@@ -197,7 +204,7 @@ public class Game extends Canvas implements Runnable  {
 		else if(var <= min){
 			return var = min;
 		}
-		
+
 		else
 			return var;
 	}
