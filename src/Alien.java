@@ -22,6 +22,7 @@ public class Alien extends GameObject {
 		if(x >= Game.WIDTH-38) {
 			collisionR();
 		}
+
 		if(x <= 0) {
 			collisionL();
 		}
@@ -44,13 +45,16 @@ public class Alien extends GameObject {
 		}
 	
 	private void collisionL() {
-		for(int i = handler.object.size()-1; i > 0; i--) {
+		for(int i = handler.object.size()-1; i > 0; --i) {
 			GameObject tempObject = handler.object.get(i);
 			if(tempObject.getId() == ID.Alien) {
 				tempObject.velX = -velX;
 				tempObject.y -= -9;
 			}
 		}
+		// Band-aid fix for first alien object not updating properly on collision, no obvious way to fix as of now.
+		GameObject tempObject = handler.object.get(2);
+		tempObject.x += 4;
 	}
 
 	public void render(Graphics g) {
