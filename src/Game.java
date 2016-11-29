@@ -172,6 +172,7 @@ public class Game extends Canvas implements Runnable  {
 				if (Bullet.alienKillCount == 36){
 					handler.clearEnemy();
 					gameState = Game.STATE.WIN;
+					Bullet.alienKillCount = 0;
 				}
 			}
 		}else if(gameState == STATE.Menu){
