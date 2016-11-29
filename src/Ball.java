@@ -11,7 +11,6 @@ public class Ball extends GameObject {
 	public void tick() {
 		x += velX;
 		y -= velY; // Negative velY because the top of the screen is 0
-		// x = Game.Clamp((int)x, 3, Game.WIDTH-39);		// Should the ball be clamped?
 		y = Game.Clamp((int)y, 0, Game.HEIGHT-169);
 	}
 

@@ -22,21 +22,21 @@ public class Bullet extends GameObject {
 		sprite.draw(g,(int) x,(int) y);
 	}
 
-	private void collision(){
-		for(int i= 0; i<handler.object.size(); i++){
+	private void collision() {
+		for(int i= 0; i<handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i);
+			// If tempObject is of ID.Alien, and if the alien intersects something it is deleted
+			if(tempObject.getId() == ID.Alien) {
 
-			if(tempObject.getId() == ID.Alien){//tempObject is BasicEnemy
-				//collision code
 				if(getBounds().intersects(tempObject.getBounds())){
-					//collision code
+
 					handler.removeObject(tempObject);
 					handler.removeObject(this);
 					}
 				}
-
 		}
 	}
+
 	@Override
 	public Rectangle getBounds() {
 		return new Rectangle((int) x +1, (int) y ,10, 17);
