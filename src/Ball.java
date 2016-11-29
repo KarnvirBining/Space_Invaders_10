@@ -2,7 +2,8 @@ import java.awt.*;
 public class Ball extends GameObject {
 
 	Handler handler;
-	Pong pong;
+
+	public static boolean AIDefeat = false;
 
 	public Ball(String ref,float x, float y, ID id, Handler handler) {
 		super(ref,x, y, id);
@@ -18,11 +19,18 @@ public class Ball extends GameObject {
 		if(y < 0||y > Game.HEIGHT -75){
 			velY = -velY;
 		}
-//		if((x >= Game.WIDTH-20)) {
-//			velX = -velX;
-//			velY = -velY;
-//		}
-		
+
+		// If the ball passes the player pong paddle, enter game loss
+		if(x < -20) {
+			handler.removeObject(this);
+		}
+
+		// If the ball passes the AI pong paddle, enable potential to win
+		if(x > Game.WIDTH) {
+			handler.removeObject(this);
+			AIDefeat = true;
+		}
+
 		collision();
 	}
 
