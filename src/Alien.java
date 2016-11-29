@@ -6,6 +6,8 @@ import java.awt.Rectangle;
  */
 public class Alien extends GameObject {
 
+	Handler handler;
+
 	public Alien(String ref, float x, float y, ID id) {
 		
 		super(ref,x, y, id);
@@ -21,7 +23,7 @@ public class Alien extends GameObject {
 				velX = -velX;
 				y -= -39;
 			}
-			//Game State Change
+			// Game State Change
 			if(y >= Game.HEIGHT-100){
 				velX = 0;
 				x = 32;

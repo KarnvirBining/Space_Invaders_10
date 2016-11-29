@@ -2,6 +2,7 @@ import java.awt.*;
 public class Bullet extends GameObject {
 
 	Handler handler;
+
 	public static int alienKillCount = 0;
 	
 	public Bullet(String ref,float x, float y, ID id, Handler handler) {
