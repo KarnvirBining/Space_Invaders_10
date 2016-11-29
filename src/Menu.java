@@ -9,8 +9,8 @@ public class Menu extends MouseAdapter{
 
 	private Game game; 
 	private Handler handler;
-	private int menuBoxX = 225; 
-	private int menuBoxY = 100; 
+	private int menuBoxX = Game.WIDTH/3; 
+	private int menuBoxY = (Game.HEIGHT-177)/3; 
 	private int menuBoxHeight = 200;
 	private int menuBoxWidth = 64;
 
@@ -29,7 +29,6 @@ public class Menu extends MouseAdapter{
 				game.gameState = Game.STATE.Game;
 			    handler.addObject(new Player("sprites/ship.gif",Game.WIDTH/2-32,Game.HEIGHT-70,ID.Player, handler));
 				handler.addObject(new Pong("sprites/ship.gif",0, Game.HEIGHT/2-90, ID.Pong, handler));
-				
 				for(int i = 0; i<12; i++){
 					for(int j = 0; j<3; j++) {
 						handler.addObject(new Alien("sprites/alien.gif",70+(i*40),(j*40),ID.Alien));
@@ -117,33 +116,33 @@ public class Menu extends MouseAdapter{
 	public void render(Graphics g){
 		if(game.gameState == Game.STATE.Menu){
 
-			makeTitle(50, Color.white, "Pong Invaders", 150, (Game.WIDTH*0)+50, g);
-			makeOption(30, Color.white, "Start", 290, 145, 0, g);
-			makeOption(30, Color.white, "Instructions", 240, 245, 100, g);
-			makeOption(30, Color.red, "Quit", 295, 345, 200, g);
+			makeTitle(50, Color.white, "Pong Invaders", 150,50, g);
+			makeOption(30, Color.white, "Start", menuBoxHeight+(menuBoxHeight/3)+10, (menuBoxHeight/2)+45, 0, g);
+			makeOption(30, Color.white, "Instructions", menuBoxHeight+(menuBoxHeight/7), (menuBoxHeight/2)+145, 100, g);
+			makeOption(30, Color.red, "Quit", menuBoxHeight+(menuBoxHeight/3)+15, (menuBoxHeight/2)+245, 200, g);
 
 		}else if(game.gameState == Game.STATE.Instructions){
 
 
-			makeTitle(50, Color.white, "Instructions", 175, (Game.WIDTH*0)+50, g);
+			makeTitle(50, Color.white, "Instructions", 175, 50, g);
 			
 			makeTitle(20, Color.white, "A, D = Left, Right", 25, 100, g);
 			makeTitle(20, Color.white, "Spacebar = Shoot", 25, 150, g);
 			makeTitle(20, Color.white, "Win Condition: Stop all aliens from landing", 25, 200, g);
 			makeTitle(20, Color.white, "If aliens make a landing GAME OVER", 25, 250, g);
 			
-			makeOption(30, Color.white, "Back", 295, 345, 200, g);
+			makeOption(30, Color.white, "Back", menuBoxX+menuBoxHeight/3, 345, 200, g);
 
 		}
 		else if(game.gameState == Game.STATE.GAMEOVER){
 
-			makeTitle(50, Color.red, "Game Over", 175, (Game.WIDTH*0)+50, g);
-			makeOption(30, Color.white, "Back", 295, 345, 200, g);
+			makeTitle(50, Color.red, "Game Over", 175, 50, g);
+			makeOption(30, Color.white, "Back", menuBoxX+menuBoxHeight/3, 345, 200, g);
 		}
 		else if(game.gameState == Game.STATE.WIN){
 
-			makeTitle(50, Color.white, "Victory", 250, (Game.WIDTH*0)+50, g);
-			makeOption(40, Color.white, "Back", 295, 345, 200, g);
+			makeTitle(50, Color.white, "Victory", 235, 50, g);
+			makeOption(30, Color.white, "Back", menuBoxX+menuBoxHeight/3, 345, 200, g);
 
 		}
 	}
