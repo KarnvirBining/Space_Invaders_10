@@ -114,11 +114,11 @@ public class Menu extends MouseAdapter{
 
 			makeTitle(50, Color.white, "Instructions", Game.WIDTH/2-140, 100, g);
 
-			makeTitle(30, Color.white, "Ship: A, D = Left, Right", Game.WIDTH/2-400, menuBoxY, g);
-			makeTitle(30, Color.white, "Paddle: W, S = Up, Down", Game.WIDTH/2-400, menuBoxY+80, g);
-			makeTitle(30, Color.white, "Spacebar = Shoot", Game.WIDTH/2-400, menuBoxY+160, g);
-			makeTitle(27, Color.white, "Win Condition: Stop all aliens from landing and the	 ball passes enemy paddle", Game.WIDTH/2-400, menuBoxY+240, g);
-			makeTitle(27, Color.white, "Aliens make a landing or the ball passes your paddle then GAME OVER", Game.WIDTH/2-400, menuBoxY+320, g);
+			makeTitle(30, Color.white, "Ship: A, D = Left, Right", Game.WIDTH/2-500, menuBoxY, g);
+			makeTitle(30, Color.white, "Paddle: W, S = Up, Down", Game.WIDTH/2-500, menuBoxY+80, g);
+			makeTitle(30, Color.white, "Spacebar = Shoot", Game.WIDTH/2-500, menuBoxY+160, g);
+			makeTitle(27, Color.white, "Win Condition: Stop all aliens from landing and the	 ball passes enemy paddle", Game.WIDTH/2-500, menuBoxY+240, g);
+			makeTitle(27, Color.white, "Aliens make a landing or the ball passes your paddle then GAME OVER", Game.WIDTH/2-500, menuBoxY+320, g);
 
 			makeOption(30, Color.white, "Back", Game.WIDTH/2-33, menuBoxY+menuBoxWidth/2+412, 400, g);
 
