@@ -5,7 +5,7 @@ import java.awt.*;
 public class Alien extends GameObject {
 
 	Handler handler;
-	private int alienDrop = -49;
+	private int alienDrop = -29;
 
 	public Alien(String ref, float x, float y, ID id, Handler handler) {
 		
