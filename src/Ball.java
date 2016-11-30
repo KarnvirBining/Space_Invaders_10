@@ -10,7 +10,7 @@ public class Ball extends GameObject {
 		super(ref,x, y, id);
 		this.handler = handler;
 		setY(Game.HEIGHT-100);
-		velX = -2;
+		velX = -4;
 		velY =2;
 		Game.Clamp((int)velY, -10, 10);
 	}
