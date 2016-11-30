@@ -9,9 +9,9 @@ public class Menu extends MouseAdapter{
 
 	private Game game; 
 	private Handler handler;
-	private int menuBoxX = 225; 
-	private int menuBoxY = 100; 
 	private int menuBoxHeight = 200;
+	private int menuBoxX = Game.WIDTH/2-(menuBoxHeight/2); 
+	private int menuBoxY = Game.HEIGHT/4; 
 	private int menuBoxWidth = 64;
 
 	public Menu(Game game, Handler handler){
@@ -50,23 +50,16 @@ public class Menu extends MouseAdapter{
 				System.exit(1);
 			}
 		}
+		//Back Button1
+		if(game.gameState == Game.STATE.Instructions){
+			if (mouseOver(mx, my, menuBoxX, menuBoxY+400, menuBoxHeight, menuBoxWidth)){
+				game.gameState = Game.STATE.Menu;
+				return;
+			}
+		}
 
-//		if(game.gameState == Game.STATE.Game){
-//			int counter = 0;
-//			for (int i = 0; i<handler.object.size(); i++){
-//				GameObject tempObject = handler.object.get(i);
-//				if (tempObject.getId() == ID.Alien) {
-//					counter++;
-//				}
-//			}
-//			if (counter == 0){
-//				handler.clearEnemy();
-//				game.gameState = Game.STATE.WIN;
-//			}
-//		}
-
-		//Back Button 
-		if(game.gameState == Game.STATE.Instructions || game.gameState == Game.STATE.GAMEOVER || game.gameState == Game.STATE.WIN){
+		//Back Button2
+		if(game.gameState == Game.STATE.GAMEOVER || game.gameState == Game.STATE.WIN){
 			if (mouseOver(mx, my, menuBoxX, menuBoxY+200, menuBoxHeight, menuBoxWidth)){
 				game.gameState = Game.STATE.Menu;
 				return;
@@ -111,34 +104,34 @@ public class Menu extends MouseAdapter{
 	public void render(Graphics g){
 		if(game.gameState == Game.STATE.Menu){
 
-			makeTitle(50, Color.white, "Pong Invaders", 150, (Game.WIDTH*0)+50, g);
-			makeOption(30, Color.white, "Start", 290, 145, 0, g);
-			makeOption(30, Color.white, "Instructions", 240, 245, 100, g);
-			makeOption(30, Color.red, "Quit", 295, 345, 200, g);
+			makeTitle(125, Color.white, "PONG INVADERS", Game.WIDTH/2-525, 150, g);
+			makeOption(30, Color.white, "Start", Game.WIDTH/2-35, menuBoxY+menuBoxWidth/2+12, 0, g);
+			makeOption(30, Color.white, "Instructions", Game.WIDTH/2-85, menuBoxY+menuBoxWidth/2+112, 100, g);
+			makeOption(30, Color.red, "Quit", Game.WIDTH/2-30, menuBoxY+menuBoxWidth/2+212, 200, g);
 
 		}else if(game.gameState == Game.STATE.Instructions){
 
 
-			makeTitle(50, Color.white, "Instructions", 175, (Game.WIDTH*0)+50, g);
+			makeTitle(50, Color.white, "Instructions", Game.WIDTH/2-140, 100, g);
 
-			makeTitle(20, Color.white, "Ship: A, D = Left, Right", 25, 100, g);
-			makeTitle(20, Color.white, "Paddle: W, S = Up, Down", 25, 140, g);
-			makeTitle(20, Color.white, "Spacebar = Shoot", 25, 180, g);
-			makeTitle(17, Color.white, "Win Condition: Stop all aliens from landing and the	 ball passes enemy paddle", 25, 220, g);
-			makeTitle(17, Color.white, "Aliens make a landing or the ball passes your paddle then GAME OVER", 25, 260, g);
+			makeTitle(30, Color.white, "Ship: A, D = Left, Right", Game.WIDTH/2-400, menuBoxY, g);
+			makeTitle(30, Color.white, "Paddle: W, S = Up, Down", Game.WIDTH/2-400, menuBoxY+80, g);
+			makeTitle(30, Color.white, "Spacebar = Shoot", Game.WIDTH/2-400, menuBoxY+160, g);
+			makeTitle(27, Color.white, "Win Condition: Stop all aliens from landing and the	 ball passes enemy paddle", Game.WIDTH/2-400, menuBoxY+240, g);
+			makeTitle(27, Color.white, "Aliens make a landing or the ball passes your paddle then GAME OVER", Game.WIDTH/2-400, menuBoxY+320, g);
 
-			makeOption(30, Color.white, "Back", 295, 345, 200, g);
+			makeOption(30, Color.white, "Back", Game.WIDTH/2-33, menuBoxY+menuBoxWidth/2+412, 400, g);
 
 		}
 		else if(game.gameState == Game.STATE.GAMEOVER){
 
-			makeTitle(50, Color.red, "Game Over", 175, (Game.WIDTH*0)+50, g);
-			makeOption(30, Color.white, "Back", 295, 345, 200, g);
+			makeTitle(200, Color.red, "GAME OVER", Game.WIDTH/2-625, 250, g);
+			makeOption(30, Color.white, "Back", Game.WIDTH/2-33, menuBoxY+menuBoxWidth/2+212, 200, g);
 		}
 		else if(game.gameState == Game.STATE.WIN){
 
-			makeTitle(50, Color.white, "Victory", 250, (Game.WIDTH*0)+50, g);
-			makeOption(30, Color.white, "Back", 295, 345, 200, g);
+			makeTitle(200, Color.YELLOW, "VICTORY", Game.WIDTH/2-425, 250, g);
+			makeOption(30, Color.white, "Back", Game.WIDTH/2-33, menuBoxY+menuBoxWidth/2+212, 200, g);
 
 		}
 	}
