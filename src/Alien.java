@@ -5,12 +5,13 @@ import java.awt.*;
 public class Alien extends GameObject {
 
 	Handler handler;
+	private int alienDrop = -49;
 
 	public Alien(String ref, float x, float y, ID id, Handler handler) {
 		
 		super(ref,x, y, id);
 		this.handler = handler;
-		velX = 2;
+		velX = 5;
 	}
 	
 
@@ -39,7 +40,7 @@ public class Alien extends GameObject {
 				GameObject tempObject = handler.object.get(i);
 				if(tempObject.getId() == ID.Alien) {
 					tempObject.velX = -velX;
-					tempObject.y -= -9;
+					tempObject.y -= alienDrop;
 				}
 			}
 		}
@@ -49,7 +50,7 @@ public class Alien extends GameObject {
 			GameObject tempObject = handler.object.get(i);
 			if(tempObject.getId() == ID.Alien) {
 				tempObject.velX = -velX;
-				tempObject.y -= -9;
+				tempObject.y -= alienDrop;
 			}
 		}
 		// Band-aid fix for first alien object not updating properly on collision, no obvious way to fix as of now.

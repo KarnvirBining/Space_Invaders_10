@@ -11,7 +11,7 @@ public class AI extends GameObject {
 	public AI(String ref, float x, float y, ID id, Handler handler) {
 		super(ref, x, y, id);
 		this.handler = handler;
-		velY=1;
+		velY=3;
 	}
 
 	
