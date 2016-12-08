@@ -6,6 +6,7 @@
 \usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{color}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -51,14 +52,20 @@ November 13, 2016 & 1.0 & Initial changes\\
 \newpage
 \pagenumbering{arabic}
 \section{Introduction}
-This is the Design Documentation(DD-Rev0) % put a space before the open bracket
+This is the Design Documentation (DD-Rev1) % put a space before the open bracket
 for Ben 10’s project Pong Invaders. This document outlines the design specifications as outlined by Dr. Spencer Smith.
-Complimentary documentation includes a Module Interface Specifications(MIS) % again, a space
-document written with Javadoc.  Potential readers of this document include:
+Complimentary documentation includes a Module Interface Specifications (MIS) % again, a space
+document written with Javadoc.
+\color{red}
+The motivation behind this document is to allow for the decomposition of systems that plan to scale into the future with updates, which allow for developers to concurrently develop components without risk of components not working with each other. The Pong Invader's project is concerned with creating a modular system design for the game that is well documented to allow for future upgrades to improve on current game mechanics. Currently the Pong Invader's system design principle is that of Model-View-Controller (MVC software design pattern) which is believed to be the best fit for allowing Pong Invader's to be modular.
+\color{black}
+Potential readers of this document include:
 \begin{itemize}
-\item Designers/Developers: This document is a way to communicate how the program being designed should function in terms of coupling and meeting requirements. It allows developers to stay on the same page and consistent with design assumptions. The breakdown of module interaction and traceability to requirements allows future developers to easily distinguish areas that can be optimized or changed. 
-\item New Members: This documentation is an effective way to portray the project focus and aim to new members who need to be brought up to speed. 
+\item Designers/Developers: This document is a way to communicate how the program being designed should function in terms of coupling and meeting requirements. It allows developers to stay on the same page and be consistent with design assumptions. The breakdown of module interaction and traceability to requirements allows future developers to easily distinguish areas that can be optimized or changed. 
+\item New Members: This documentation is an effective way to portray the project focus and aim to new members who need to be brought up to speed.
 \end{itemize}
+
+
 
 \section{Anticipated and Unlikely Changes} \label{SecChange}
 This section outlines changes that may occur in the project. Anticipated changes are outlined in section 2.1 and unlikely changes in section 2.2.
@@ -217,7 +224,7 @@ R6 & M3\\
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
 \begin{figure}[H]
-The hierarchy between modules that have been decomposed and mentioned throughout this document is as follows.
+The hierarchy between modules that have been decomposed and mentioned throughout this document is as follows:
 \begin{enumerate}
 \item Hardware Modules (Keyboard)  
 \item  Input (KeyInput) 
@@ -227,6 +234,9 @@ The hierarchy between modules that have been decomposed and mentioned throughout
 \item Output 
 \item Hardware Modules (Display)
 \end{enumerate}
+\color{red}
+The uses hierarchy listed above is read as such: where 1.. 7 are numbered states in a directed acyclic graph and all numbered states are followed by the prior numbered state. Hence 1 to 2 to 3...(where "to" implies the next state) and so forth. 
+\color{black}
 %\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
 \caption{Use hierarchy among modules}
 \label{FigUH}
