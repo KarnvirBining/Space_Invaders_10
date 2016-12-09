@@ -9,39 +9,66 @@ import java.net.URL;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
-
 /**
- * A resource manager for sprites in the game. Its often quite important
- * how and where you get your game resources from. In most cases
- * it makes sense to have a central resource loader that goes away, gets
- * your resources and caches them for future use.
- * <p>
- * [singleton]
- * <p>
- * @author Kevin Glass
+ * SpriteStore
+ * <br>
+ * <table><tr><td> 
+ *  <table summary="">
+ *   <tr>
+ *      <td>Routine name|</td><td>In</td><td>|Out|</td><td>Exceptions</td>
+ *      <tr>
+ *      <td>get</td><td></td>SpriteStore<td>-</td><td>-</td>
+ *      </tr>
+ *      <tr>
+ *      <td>getSprite</td><td>String</td><td>Sprite</td><td>sprite is .gif,sprite is in folder</td>
+ *      </tr>
+ *      <tr>
+ *      <td>fail</td><td>String</td><td></td><td>-</td>
+ *      </tr>
+
+ *   </tr>
+ * </table>
+ * <br>
+ * Assumptions: No Assumptions <br><br>
+ * 
+ * State Variables: 
+ * <br>
+ * single: SpriteStore<br>
+ * creates call to SpriteStore class<br>
+ * sprites: HashMap<br>
+ * The cached sprite map, from reference to sprite instance<br>
+ * URL:net<br>
+ * link to the image from 'res' folder<br>
+ * sourceImage:BufferedImage<br>
+ * describes an Image with an accessible buffer of image data<br>
+ * <br>
+ * 
+ * 
+ * Environment  Variables: <br>
+ * Screen: Display Device<br><br>
+ * 
+ * Access Routine Semantics:<br><br>
+ * get():<br>
+ * transition:Get the single instance of this class<br>
+ * getSprite():<br>
+ * transition:retrieves a sprite from the 'res' folder to be loaded and used in game<br>
+ * fail():<br>
+ * transition: exits window and prints error message to console<br>
+ * 
  */
+
 public class SpriteStore {
-	/** The single instance of this class */
+
 	private static SpriteStore single = new SpriteStore();
 	
-	/**
-	 * Get the single instance of this class 
-	 * 
-	 * @return The single instance of this class
-	 */
 	public static SpriteStore get() {
 		return single;
 	}
 	
-	/** The cached sprite map, from reference to sprite instance */
+	
 	private HashMap<String, Sprite> sprites = new HashMap<String, Sprite>();
 	
-	/**
-	 * Retrieve a sprite from the store
-	 * 
-	 * @param ref The reference to the image to use for the sprite
-	 * @return A sprite instance containing an accelerate image of the request reference
-	 */
+
 	public Sprite getSprite(String ref) {
 		// if we've already got the sprite in the cache
 		// then just return the existing version
@@ -84,11 +111,7 @@ public class SpriteStore {
 		return sprite;
 	}
 	
-	/**
-	 * Utility method to handle resource loading failure
-	 * 
-	 * @param message The message to display on failure
-	 */
+
 	private void fail(String message) {
 		// we're pretty dramatic here, if a resource isn't available
 		// we dump the message and exit the game

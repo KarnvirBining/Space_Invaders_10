@@ -1,4 +1,100 @@
 import java.awt.*;
+/**
+ *Child of GameObject
+ * <br>
+ * <table><tr><td> 
+ *  <table summary="">
+ *   <tr>
+ *      <td>Routine name|</td><td>In</td><td>|Out|</td><td>Exceptions</td>
+ *      <tr>
+ *      <td>Ball</td><td>String,float,float,enumeration</td><td></td><td>ID has to be in ID class, Reference to sprite must be in right directory</td>
+ *      </tr>
+ *      <tr>
+ *      <td>tick</td><td>-</td><td>-</td><td></td>
+ *      </tr>
+ *       <tr>
+ *      <td>collision</td><td>-</td><td>-</td><td></td>
+ *      </tr>
+ *      <tr>
+ *      <td>render</td><td>Graphics</td><td></td><td></td>
+ *      </tr>
+ *      <tr>
+ *      <td>getBounds</td><td>-</td><td>Rectangle</td><td></td>
+ *      </tr>
+ *      <tr>
+ *   </tr>
+ * </table>
+ * <br>
+ * Assumptions: No Assumptions <br><br>
+ * 
+ * State Variables: 
+ * <br>
+ *handler:Handler<br>
+ *reference to Handler class<br>
+ *ref : String<br>
+ *no ball sprite; however needs to be referenced as Pong is a child of Game Object <br>
+ * x: float<br>
+ * Is the x-position of ball on window<br>
+ * y: float<br>
+ * Is the y-position of ball on window<br>
+ * id: enumeration<br>
+ * Is the identification of which class is being referred to<br>
+ * velX: float<br>
+ * Is the velocity of ball in the x-direction<br>
+ * velY: float<br>
+ * Is the velocity of ball in the y-direction<br>
+ * Clamp: Game<br>
+ * Sets the bounds to which the ball can travel to on the window<br>
+ * tempObject : GameObject<br>
+ * Is a temporary Object of GameObject which then allows traversal of Linked List in Handler<br>
+ * intersects: Rectangle<br>
+ * Checks if hit boxes of two objects have intersected<br> 
+ * g: Graphics<br>
+ * allows graphics to be drawn on to screen<br>
+ * HEIGHT:Game<br>
+ * Give height of game window<br>
+ * WIDTH:Game<br>
+ * Give width of game window<br>
+ * get : Handler<br>
+ * gets index of Object in Linked list<br>
+ * size : Handler<br>
+ * gets size of Linked list<br>
+ * setColor: Graphics<br>
+ * Sets a color of the ball<br>
+ * fillRect : Graphics<br>
+ * Creates a box which will be ball<br>
+ * alienKillCount: Bullet<br>
+ * Gets the count of aliens that have died<br>
+ * SetY:GameObject<br>
+ * Sets the y-position of ball on the window<br>
+ * dy: float<br>
+* change in y-direction used to calculate which velocity ball will have<br>
+* AIDefeat: boolean<br>
+* check if AI has lost<br>
+* PlayerDefeat :boolean
+* checks if player has lost<br>
+* g: Graphics<br>
+* allows graphics to be drawn on to screen<br>
+ *  <br>
+ * 
+ * Environment  Variables: <br>
+ * None<br><br>
+ * 
+ * Access Routine Semantics: <br>
+ * Ball():<br>
+ * transition: Initializes reference to Sprite, x position y position and ID of Ball, and this instance of handler  <br>
+ * tick():<br>
+ * transition: Allows game objects to be placed in game loop <br>
+ * collision():<br>
+ * transition: Checks if ball hits alien,or ball controlled paddle or, AI controlled paddle<br>
+ * render():<br>
+ * transition: Will render object to screen <br>
+ * getBounds():<br>
+ * transition: Gets bounds of the ball to set up for collision <br>
+ */	
+
+
+
 public class Ball extends GameObject {
 
 	Handler handler;
@@ -73,21 +169,7 @@ public class Ball extends GameObject {
 				}
 				
 				
-//				if(getBounds().intersects(tempObject.getBounds())) {
-//
-//					velX = -velX;
-//					velY = -velY;
-//				}
-//				if(getBounds().intersects(((Pong) tempObject).getBounds2())) {
-//
-//					velX = -velX;
-//					velY = (float) (-velY*1.5);
-//				}
-//				if(getBounds().intersects(((Pong) tempObject).getBounds3())) {
-//
-//					velX = -velX;
-//					velY = (float) (-velY*1.5);
-//				}
+
 			}
 			if(tempObject.getId() == ID.AI) {
 
@@ -97,21 +179,6 @@ public class Ball extends GameObject {
 						float dy = y - (tempObject.y + 45);
 						velY = (float) (dy *0.2);
 					}
-//				if(getBounds().intersects(tempObject.getBounds())) {
-//
-//					velX = -velX;
-//					velY = -velY;
-//				}
-//				if(getBounds().intersects(((AI) tempObject).getBounds2())) {
-//
-//					velX = -velX;
-//					velY = (float) (-velY*1.5);
-//				}
-//				if(getBounds().intersects(((AI) tempObject).getBounds3())) {
-//
-//					velX = -velX;
-//					velY = (float) (-velY*1.5);
-//				}
 			}
 		}
 		}

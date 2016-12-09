@@ -25,6 +25,9 @@ import java.awt.image.BufferStrategy;
  *      <tr>
  *      <td>render</td><td></td><td></td><td></td>
  *      </tr>
+ *      <tr>
+ *      <td>Clamp</td><td>int,int,int</td><td></td><td></td>
+ *      </tr>
  *      <td>main</td><td>String[]</td><td></td><td></td>
  *      </tr>
  *   </tr>
@@ -35,19 +38,51 @@ import java.awt.image.BufferStrategy;
  * State Variables: 
  * <br>
  * WIDTH: int <br>
- *
+ * width of game window<br>
  * HEIGHT: int<br>
- * handler: Object<br>
+ * height of game window<br>
+ * serialVersionUID: final int<br>
+ * Gives memory identification of this class<br>
+ * handler: Handler<br>
+ * calls reference to Handler class
+ * hud: HUD<br>
+ * calls reference to HUD class
+ * menu: Menus<br>
+ * calls reference to Menu class
+ * STATE: enum<br>
+ * All states of the game <br>
+ * addKeyListener :Component<br>
+ * calls KeyInput class allows keys defined there to have action on screen<br>
+ * addMouseListener :Component<br>
+ * calls Menu class allows mouse defined there to have action on screen<br>
+ * Window:Window
+ * creates window on screen with a title<br>
  * thread: Thread<br>
+ * thread of Game created<br>
  * running: boolean<br>
+ * checks if thread is running<br>
  * lastTime: long<br>
+ * gives the syatem time in nanoseconds<br>
  * amountofTicks: double<br>
+ * refers to a single instance of a repeated action 
  * delta: double<br>
+ * change from last frame to current<br>
  * timer: long<br>
+ * current system time in milliseconds<br>
  * frames: int<br>
+ * how many frames per second are shown on screen<br>
  * now: long<br>
+ * this current frame<br>
  * bs: BufferStartegy<br>
+ * organize complex memory on a particular Canvas or Window<br>
  * g: Graphics<br>
+ * allows graphics to be drawn on to screen<br>
+ * var:int<br>
+ * variable to be controlled<br>
+ * min:int<br>
+ * minimum value variable can be<br>
+ * max:int<br>
+ * maximum value variable can be<br>
  * <br>
  * 
  * Environment  Variables: <br>
@@ -65,6 +100,8 @@ import java.awt.image.BufferStrategy;
  * transition: Game loop <br>
  * render():<br>
  * transition: Manages the allotment of memory by using Buffer Strategy. Renders black background on to window. <br>
+ * Clamp(): <br>
+ * transition: sets bound for a variable to not go below a minimum value or maximum value
  * 
  * 
  */	
@@ -178,9 +215,7 @@ public class Game extends Canvas implements Runnable  {
 					Bullet.alienKillCount = 0;
 				}
 			}
-		}else if(gameState == STATE.Menu){
-			menu.tick(); 
-		}
+			}
 	}
 
 	private void render(){
@@ -205,7 +240,7 @@ public class Game extends Canvas implements Runnable  {
 		g.dispose();
 		bs.show();
 	}
-	//sets bounds for ship to not leave game screen
+	
 	public static int Clamp(int var, int min, int max){
 		if(var >= max){
 			return var = max;

@@ -17,19 +17,25 @@ public class Window extends Canvas{
  *   <tr>
  *      <td>Routine name|</td><td>In|</td><td>Out|</td><td>Exceptions</td>
  *      <tr>
- *      <td>Window</td><td>int,int,String,Game</td><td>-</td><td>-</td>
+ *      <td>Window</td><td>int,int,String,Game</td><td>-</td><td>Width and Height will not be negative value</td>
  *      </tr>
  *   </tr>
  * </table>
  * <br>
  * Assumptions: No Assumptions <br><br>
  * 
- * State Variables: 
- * <br>
+ * 
+ * 
+ * 
+ * State Variables: <br>
  * width: int <br>
+ * Width of the window<br>
  * height: int<br>
+ * Height of the Window<br>
  * title: String<br>
- * game: Game<br><br>
+ * Title placed on top of Window<br>
+ * game: Game<br>
+ * Reference to Game Class, Game class is where window is drawn<br><br> 
  * 
  * Environment  Variables: <br>
  * Screen: Display Device<br><br>

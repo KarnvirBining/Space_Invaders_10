@@ -1,14 +1,14 @@
 import java.awt.Graphics;
 import java.awt.Rectangle;
 /**
- * GameObject
+ * GameObject is parent class to all classes that extend object. This was done to allow different game objects to have their own physics and render
  * <br>
  * <table><tr><td> 
  *  <table summary="">
  *   <tr>
  *      <td>Routine name|</td><td>In</td><td>|Out|</td><td>Exceptions</td>
  *      <tr>
- *      <td>GameObject</td><td>float,float,enumeration</td><td></td><td></td>
+ *      <td>GameObject</td><td>String,float,float,enumeration</td><td></td><td>ID has to be in ID class, Reference to sprite must be in right directory</td>
  *      </tr>
  *      <tr>
  *      <td>tick</td><td></td><td></td><td></td>
@@ -54,13 +54,22 @@ import java.awt.Rectangle;
  * State Variables: 
  * <br>
  *
- * x: int<br>
- * y: Object<br>
+ *ref : String<br>
+ *Is the reference to which directory the sprite of GameObject is located<br>
+ * x: float<br>
+ * Is the x-position of game object on window<br>
+ * y: float<br>
+ * Is the y-position of game object on window<br>
  * id: enumeration<br>
+ * Is the identification of which class is being referred to<br>
  * velX: float<br>
+ * Is the velocity of game object in the x-direction<br>
  * velY: float<br>
+ * Is the velocity of object in the y-direction<br>
  * g: Graphics<br>
- * 
+ * allows graphics to be drawn on to screen<br>
+ * sprite : Sprite<br>
+ * Creates object of type Sprite 
  * <br>
  * 
  * Environment  Variables: <br>
